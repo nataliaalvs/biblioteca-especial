@@ -1,0 +1,130 @@
+/* ..................................................................................................... */
+/* ALTO CONTRASTE */
+/* .contrast nav, */
+.contrast,
+/* .contrast div, */
+/* .contrast li, */
+.contrast ol,
+.contrast header,
+.contrast footer,
+.contrast section,
+.contrast main,
+.contrast aside,
+.contrast article {
+    background: black !important;
+    color: white !important;
+}
+
+
+.contrast h1,
+.contrast h2,
+.contrast h4,
+.contrast h5,
+.contrast h6,
+/* .contrast p, */
+/* .contrast label, */
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast b,
+.contrast u,
+.contrast span {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* .contrast button, 
+.contrast input[type=button],
+.contrast input[type=reset],
+.contrast input[type=submit] {
+    background: black !important;
+    color: yellow !important;
+    border: none !important;
+}*/
+
+
+.contrast input[type=text],
+.contrast input[type=password],
+.contrast input[type=url],
+.contrast input[type=search],
+.contrast input[type=email],
+.contrast input[type=tel],
+.contrast input[type=date],
+.contrast input[type=month],
+.contrast input[type=week],
+.contrast input[type=datetime],
+.contrast input[type=datetime-local],
+.contrast textarea,
+.contrast input[type=number] {
+    background: black !important;
+    border: 1px solid white !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.contrast img.on-contrast-force-gray {
+    filter: grayscale(100%) contrast(120%);
+}
+
+.contrast img.on-contrast-force-white {
+    filter: brightness(0) invert(1);
+}
+
+.contrast i, a, .dark-p, 
+.contrast h3, .dark-text{
+    color: #000;
+}
+
+.contrast input[type=text] {
+    color: white;
+}
+
+.nav-link {
+    color: #000;
+}
+
+.contrast .btn-dark-secondary {
+    border: 2px solid grey;
+    background-color: #000;
+    color: yellow;
+}
+
+.contrast .btn-dark-secondary:hover {
+    border: 2px solid grey;
+    background-color: rgb(70, 68, 68);
+    color: yellow;
+}
+
+.contrast .btn-dark-primary {
+    background-color: rgb(0, 0, 0);
+    border: #000;
+    color: yellow;
+}
+
+.contrast .btn-text-color {
+    color: yellow;
+}
+
+/* .contrast a {
+    color: black;
+} */
+
+.contrast nav, .contrast li, .contrast ul {
+    background-color: #03FFE1;
+}
+
+.card {
+    border-image: linear-gradient(#9800df, #fd0194) 60;
+    border-width: 4px;
+    border-style: solid;
+
+    /* background: 
+    linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent; */
+
+}
+
+/* .contrast .dark-p {
+    color: #000;
+} */

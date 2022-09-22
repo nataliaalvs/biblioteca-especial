@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block btn-login %}
+<form class="d-flex" action="{% url 'login' %}">
+    <button class="btn btn-outline-dark btn-dark-primary fw-bold" type="submit">
+        <!-- <i class="bi bi-person-fill" style="font-size: 19px"></i> -->
+        Entrar
+    </button>
+</form>
+{% endblock btn-login %}
+
+{% block header %}
+<header class="masthead">
+    <div class="container px-4 px-lg-5 h-100">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">Texto resumindo o que é</h1>
+                <hr class="divider" />
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 mb-5">Complemento</p>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header%}
+
+{% block footer %}
+<!-- <footer class="py-4 bg-dark row-cols-4">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Biblioteca Especial 2022</p></div>
+    
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5" style="color: white;">
+                    <h1>ola</h1>
+                </div>
+                <div class="col mb-5" style="color: white;">
+                    <h1>ola</h1>
+                </div>
+                <div class="col mb-5" style="color: white;">
+                    <h1>ola</h1>
+                </div>
+            </div>
+            </div>
+    </section>
+
+
+</footer> -->
+
+{% endblock footer%}
