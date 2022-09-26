@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "../layouts/base.html" %}
 {% load static %}
  <head>
   <link rel="stylesheet" href="{% static 'dark-login.css' %}">
@@ -14,9 +14,6 @@
                 {%block titulo%} 
                 <h3 class="mb-4">Entrar</h3>
                 {%endblock titulo%}
-
-                {%block div-input%}
-                {%endblock div-input%}
   
               <div class="form-outline mb-2 text-start">
                 <label class="form-label dark-text" for="typeEmailX-2">Email</label>
@@ -28,22 +25,15 @@
                 <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
               </div>
 
-              {% block input-senha %}
-              {% endblock input-senha %}
-
-              {% block register %}
               <div>
-                <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'cadastro' %}">Criar nova conta</a>
+                <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'register' %}">Criar nova conta</a>
                 </p>
               </div>
-              {% endblock register %}
               
-              {% block btn%}
-              <form action="{% url 'biblioteca' %}">
+              <form action="{% url 'book.index' %}">
 
                   <button class="btn btn-primary btn-lg btn-block btn-dark-secondary" type="submit">Entrar</button>
               </form>
-              {% endblock btn%}
 
   
             </div>

@@ -1,0 +1,60 @@
+{% extends "../layouts/base.html" %}
+
+{% load static %}
+ <head>
+  <link rel="stylesheet" href="{% static 'dark-login.css' %}">
+ </head>
+{% block section %}
+<section class="v-100 fw-bolder" style="background-color: #263249;">
+    <div class="container py-4 vh-100">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-5 mt-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem; border:none">
+            <div class="card-body p-4 text-center">
+                <h3 class="mb-4">Cadastrar</h3>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div class="form-outline text-start">
+                      <label class="form-label dark-text" for="form3Example1">Nome</label>
+                      <input type="text" id="form3Example1" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div class="form-outline text-start">
+                      <label class="form-label dark-text" for="form3Example2">Sobrenome</label>
+                      <input type="text" id="form3Example2" class="form-control" />
+                    </div>
+                  </div>
+              </div>
+              <div class="form-outline mb-2 text-start">
+                <label class="form-label dark-text" for="typeEmailX-2">Email</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+              </div>
+  
+              <div class="form-outline mb-3 text-start">
+                <label class="form-label dark-text" for="typePasswordX-2">Senha</label>
+                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+              </div>
+
+              <div class="form-outline mb-3 text-start">
+                <label class="form-label dark-text" for="typePasswordX-2">Confirme sua senha</label>
+                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+              </div>
+
+              
+              {% block btn%}
+              <form action="{% url 'book.index' %}">
+
+                  <button class="btn btn-primary btn-lg btn-block btn-dark-primary" type="submit">Cadastrar</button>
+              </form>
+              {% endblock btn%}
+
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%endblock section%}
