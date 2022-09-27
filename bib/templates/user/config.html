@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
+{% extends '../layouts/base.html' %}
 
 {%block opcoes-navbar%} 
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Opções</a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item fw-bold" href="{% url 'addLivro' %}">Adicionar livro</a></li>
+        <li><a class="dropdown-item fw-bold" href="{% url 'book.create' %}">Adicionar livro</a></li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item fw-bold" href="{% url 'config' %}">Configurações</a></li>
+        <li><a class="dropdown-item fw-bold" href="{% url 'user.config' %}">Configurações</a></li>
     </ul>
 </li>
 {% endblock opcoes-navbar%}
@@ -17,7 +17,7 @@
       <!-- <i class="bi bi-person-fill me-1" style="font-size: 19px;"></i> -->
       Nome do usuário</a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item fw-bold" href="{% url 'perfil' %}">Meu perfil</a></li>
+      <li><a class="dropdown-item fw-bold" href="{% url 'user.profile' %}">Meu perfil</a></li>
       <li><hr class="dropdown-divider" /></li>
       <li><a class="dropdown-item fw-bold" href="#!">Sair</a></li>
   </ul>
@@ -78,7 +78,7 @@
 
           <div class="container">
             <div class="text-center fixed-bottom mb-5">
-              <button type="submit" class="btn btn-outline-dark fw-bold btn-dark-secondary" formaction="{% url 'biblioteca' %}">Voltar</button>
+              <button type="submit" class="btn btn-outline-dark fw-bold btn-dark-secondary" formaction="{% url 'book.index' %}">Voltar</button>
               <button type="submit" class="btn btn-outline-dark fw-bold btn-dark-secondary" formaction="">Salvar</button>
             </div>
           </div>
