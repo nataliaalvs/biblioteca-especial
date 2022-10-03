@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""customauth URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,14 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from bib.views import *
+from django.urls import path, include
+from customauth.views import *
+from django.views.generic.base import TemplateView # new
 
-urlpatterns = [
-    path('', index, name="home"),
-    path('bib/', include('bib.urls')),  
-    # Para utilizar a autenticação customizada:
-    path('auth/', include('customauth.urls')),    
-
-
+urlpatterns = [    
+    path('register/', register, name='auth.register'),
+    path('login/', login, name='auth.login'),
+    path('logout/', logout, name='auth.logout'),
+    
+    
 ]
