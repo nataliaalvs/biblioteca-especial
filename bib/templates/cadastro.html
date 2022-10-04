@@ -4,7 +4,7 @@
 <h3 class="mb-4">Cadastrar</h3>
 {%endblock titulo%} 
 
-<div class="col-12 col-md-8 col-lg-7"></div>
+<div class="col-12 col-md-8 col-lg-7 "></div>
 {% block div-input %}
 <div class="row">
     <div class="col-md-6 mb-2">
@@ -20,7 +20,15 @@
       </div>
     </div>
 </div>
+
 {% endblock div-input%}
+
+{% block input-data %}
+<div class="form-outline mb-3 text-start">
+  <label class="form-label dark-text" for="typePasswordX-2">Data de nascimento</label>
+  <input type="date" id="typePasswordX-2" class="form-control form-control-lg" />
+</div>
+{% endblock input-data%}
 
 {% block input-senha %}
 <div class="form-outline mb-3 text-start">

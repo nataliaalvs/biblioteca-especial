@@ -4336,6 +4336,9 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  /* border-bottom: 3px solid lightgray; */
+  box-shadow: 1px 1px 10px 1px #858282;
+  /* background-color:rgb(117, 158, 6) */
 }
 
 
