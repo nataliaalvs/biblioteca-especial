@@ -33,17 +33,37 @@
                     </ul>
 
                     <i class="bi bi-brightness-high-fill mx-2" id="toggleDark" style="cursor:pointer;" onclick="window.toggleContrast()"></i>
-                    {% block btn-login %} {% endblock btn-login %}
+                    {% if user.is_authenticated %}                    
+                        <li class="nav-item dropdown">
+                            <!-- <i class="bi bi-person-fill" style="font-size: 19px;"></i> -->
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-1" style="font-size: 19px;"></i>{{ user.name }}</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item fw-bold" href="{% url 'user.profile' %}">Meu perfil</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item fw-bold" href="{% url 'auth.logout' %}">Sair</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <form class="d-flex" action="{% url 'auth.login' %}">
+                            <button class="btn btn-outline-dark btn-dark-primary fw-bold" type="submit">
+                                <!-- <i class="bi bi-person-fill" style="font-size: 19px"></i> -->
+                                Entrar
+                            </button>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
         </nav>
         <!-- Header-->
         {% block header %} {% endblock header %}
         <!-- Section-->
-        {% block section %} {% endblock section %}
+        <div class="h-100"> <!-- temporário para deixar a footer no bottom -->
+            {% block section %} {% endblock section %}
+
+        </div>
 
         {% block footer %} {% endblock footer %}
-        <!-- Footer--
+        <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Biblioteca Especial 2022</p></div>
         </footer>
