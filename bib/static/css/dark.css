@@ -28,10 +28,14 @@
 .contrast cite,
 .contrast q,
 .contrast b,
-.contrast u,
-.contrast span {
+.contrast u {
     color: rgb(255, 255, 255) !important;
 }
+
+.contrast span { 
+    color: black;
+}
+
 
 /* .contrast button, 
 .contrast input[type=button],
@@ -78,19 +82,20 @@
     color: white;
 }
 
+
 .nav-link {
     color: #000;
 }
 
 .contrast .btn-dark-secondary {
     border: 2px solid grey;
-    background-color: #000;
+    background-color: rgb(90, 87, 87);
     color: yellow;
 }
 
 .contrast .btn-dark-secondary:hover {
     border: 2px solid grey;
-    background-color: rgb(70, 68, 68);
+    background-color: rgb(102, 98, 98);
     color: yellow;
 }
 
@@ -108,12 +113,18 @@
     color: black;
 } */
 
-.contrast nav, .contrast li, .contrast ul {
-    background-color: #03FFE1;
+
+.contrast nav, .contrast .dropdown-menu{
+    /* background: -webkit-linear-gradient(to left, #00ffd5 50%, #4ef1bb 100%);
+    background: linear-gradient(95deg, rgba(0,211,255,1) 0%, rgba(0,255,222,1) 44%, rgba(51,255,201,1) 100%); */
+    background-color: #00ffd5;
 }
 
 .card {
-    border-image: linear-gradient(#b200df, #48ff00) 60;
+    /* border-image: linear-gradient(#b200df, #48ff00) 60; */
+    /* background: -webkit-linear-gradient(to left, #00ffd5 50%, #4ef1bb 100%); */
+    /* border-image: linear-gradient(#01b3d6 30%,#00f7ff 55%, #00ffbb 100%) 60; */
+    border-image: linear-gradient(#00ffbb 30%, #00f7ff 55%, #01b3d6 100%) 60;
     border-width: 4px;
     border-style: solid;
 

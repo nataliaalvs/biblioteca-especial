@@ -1,18 +1,20 @@
 {% extends "base.html" %}
+
 {% load static %}
  <head>
   <link rel="stylesheet" href="{% static 'dark-login.css' %}">
  </head>
 {% block section %}
+
 <section class="v-100 fw-bolder" style="background-color: #263249;">
     <div class="container py-4 vh-100">
       <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-12 col-md-8 col-lg-5 my-4 py-0">
-          <div class="card shadow-2-strong" style="border-radius: 1rem; border:none">
-            <div class="card-body p-4 text-center">
+        <div class="col-xs-5 col-sm-12 col-md-8 col-lg-5">
+          <div class="card shadow-2-strong col-xs-4" style="border-radius: 1rem; border:none">
+            <div class="card-body p-4 text-center col-xs-4">
 
                 {%block titulo%} 
-                <h3 class="mb-4">Entrar</h3>
+                <h3 class="mb-4"></i>Entrar <i class="bi bi-book"></i> </h3>
                 {%endblock titulo%}
 
                 {%block div-input%}

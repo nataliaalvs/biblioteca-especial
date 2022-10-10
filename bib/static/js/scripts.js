@@ -1,15 +1,14 @@
- const toggle = document.getElementById('toggleDark');
+const toggle = document.getElementById('toggleDark');
 
- toggle.addEventListener('click', function (e) {
-     this.classList.toggle('bi-moon-fill');
+//  toggle.addEventListener('click', function (e) {
+//      this.classList.toggle('bi-moon-fill');
 
-     if (this.classList.toggle('bi-brightness-high-fill')) {
-     } else {
-         button.addEventListener('click', function (e) {
-         });
-     }
- });
-
+//      if (this.classList.toggle('bi-brightness-high-fill')) {
+//      } else {
+//          button.addEventListener('click', function (e) {
+//          });
+//      }
+//  });
 
 
 ('keypress', function () {
@@ -24,37 +23,37 @@
         updateView: updateViewContrast
     };
 
-     window.toggleContrast = function () { Contrast.toogle(); };
+    window.toggleContrast = function () { Contrast.toogle(); };
 
-     Contrast.check();
+    Contrast.check();
 
-     function checkContrast() {
-         this.updateView();
-     }
+    function checkContrast() {
+        this.updateView();
+    }
 
     function getContrastState() {
-         return localStorage.getItem(this.storage) === 'true';
+        return localStorage.getItem(this.storage) === 'true';
     }
 
     function setContrastState(state) {
         localStorage.setItem(this.storage, '' + state);
         this.currentState = state;
-         this.updateView();
+        this.updateView();
     }
 
     function updateViewContrast() {
         var body = document.body;
 
-         if (this.currentState === null)
-             this.currentState = this.getState();
+        if (this.currentState === null)
+            this.currentState = this.getState();
 
-         if (this.currentState)
-             body.classList.add(this.cssClass);
-         else
-             body.classList.remove(this.cssClass);
+        if (this.currentState)
+            body.classList.add(this.cssClass);
+        else
+            body.classList.remove(this.cssClass);
     }
 
-     function toogleContrast() {
-         this.setState(!this.currentState);
-     }
+    function toogleContrast() {
+        this.setState(!this.currentState);
+    }
 })();

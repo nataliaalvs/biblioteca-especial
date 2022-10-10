@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
+{% load static %}
 {% block btn-login %}
-<form class="d-flex" action="{% url 'login' %}">
+<form class="d-flex ms-2" action="{% url 'login' %}">
     <button class="btn btn-outline-dark btn-dark-primary fw-bold" type="submit">
         <!-- <i class="bi bi-person-fill" style="font-size: 19px"></i> -->
         Entrar
@@ -13,8 +13,8 @@
 <header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-            <div class="col-lg-8 align-self-end">
-                <h1 class="text-white font-weight-bold">Texto resumindo o que é</h1>
+            <div class="col-lg-10 align-self-end">
+                <h1 class="text-white font-weight-bold">Bem vindo a Biblioteca Especial</h1>
                 <hr class="divider" />
             </div>
             <div class="col-lg-8 align-self-baseline">
