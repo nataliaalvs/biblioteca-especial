@@ -1,7 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-bib/books/user_*/
+user_*/
 
 # C extensions
 *.so
