@@ -4051,10 +4051,10 @@ textarea.form-control-lg {
   border: 0;
 }
 
-.dropdown-item:hover, .dropdown-item:focus {
+/* .dropdown-item:hover, .dropdown-item:focus {
   color: #1e2125;
-  background-color: #e9ecef;
-}
+  background-color: #0080ff;
+} */
 
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
@@ -11964,4 +11964,5 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
     display: none !important;
   }
 }
+
 

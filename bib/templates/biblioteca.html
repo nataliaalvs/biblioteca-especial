@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {%load static%}
+{% block opcoes-navbar %} {% endblock %}
 
 {% block btn-login %}
 <li class="nav-item dropdown">
@@ -30,108 +31,152 @@
                 </button>
             </form>
         </div>
-        <!-- <div class="px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-5 row-cols-md-8">
-                <div class="col mb-5">
-                    <div class="text-center">
-                        <!-- Product name--
-                        <h5 class="fw-bolder">Título</h5>
-                    </div>
-                    <div class="card h-100">
-                        <!-- Product image--
-                        <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
-                        <!-- Product details--
-                        <div class="card-body p-4 ">
-                        </div>
-                        <!-- Product actions--
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
-                            <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto fw-bold" href="{% url 'livro'%}">Ler livro</a></div> --
-                            <form action="">
-                                <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- <div class="col mb-5">
-                    <div class="text-center">
-                        <!-- Product name--
-                        <h5 class="fw-bolder">Título</h5>
-                    </div>
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
-                        <!-- Product details--
-                        <div class="card-body p-4">
-                        </div>
-                        <!-- Product actions--
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <!-- <a class="btn btn-outline-dark mt-auto fw-bolder" href="{% url 'livro'%}">Ler livro</a> ->
-                                <form action="">
-                                    <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
-                                </form>
+       
+            <div class="px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col-5 mb-5">
+                        <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                </div>
                             </div>
-                        </div>
-                        <!-- <div class="container">
-                            <div class="text-center fixed-bottom mb-5">
-                              <button type="submit" class="btn btn-outline-dark fw-bold" formaction="{% url 'biblioteca' %}">Voltar</button>
-                              <button type="submit" class="btn btn-outline-dark fw-bold" formaction="">Salvar</button>
-                            </div>
-                          </div> --
-    
-                        
-                    </div>
-                </div>
-    
-                <div class="col mb-5">
-                    <div class="text-center">
-                        <!-- Product name--
-                        <h5 class="fw-bolder">Título</h5>
-                    </div>
-                    <div class="card h-100">
-                        <!-- Product image--
-                        <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> --
-                        <!-- Product details--
-                        <div class="card-body p-4">
-                        </div>
-                        <!-- Product actions--
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
+                            <!-- Product actions-->
+                            
+                            <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
                                 <form action="">
-                                    <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                    <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="col mb-5">
-                    <div class="text-center">
-                        <!-- Product name--
-                        <h5 class="fw-bolder">Título</h5>
-                    </div>
-                    <div class="card h-100">
-                        <!-- Product image--
-                        <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> --
-                        <!-- Product details--
-                        <div class="card-body p-4">
-                        </div>
-                        <!-- Product actions--
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <form action="">
-                                    <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary formaction="{% url 'livro'%}" type="submit">Ler livro</button>
-                                </form>
+
+
+                            <div class="col-5 mb-5">
+                                <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    
+                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
+                                        <form action="">
+                                            <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-    
-                    </div>
-                </div> -->
-                <!-- <button type="submit" id="myButton">but</button> -->
-                
-            </div>
-        </div>
+
+                            <div class="col-5 mb-5">
+                                <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    
+                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
+                                        <form action="">
+                                            <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5 mb-5">
+                                <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    
+                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
+                                        <form action="">
+                                            <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5 mb-5">
+                                <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    
+                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
+                                        <form action="">
+                                            <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5 mb-5">
+                                <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    
+                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
+                                        <form action="">
+                                            <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 mb-5">
+                                <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    
+                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
+                                        <form action="">
+                                            <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 mb-5">
+                                <div class="card h-100 card-color col-md-12 col-sm-12 col-12">
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    
+                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
+                                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
+                                        <form action="">
+                                            <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary" formaction="{% url 'livro'%}" type="submit">Ler livro</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
     </section>
 </div>
 {% endblock section %}
