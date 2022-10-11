@@ -1,5 +1,11 @@
 {% extends '../layouts/base.html' %}
-
+{% block styles %}
+<style>
+    .section-read {
+        white-space: pre;
+    }
+</style>
+{% endblock %}
 {%block opcoes-navbar%}
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
@@ -35,37 +41,8 @@
 
 <form>
     <div class="container">
-        <h2>
-            <label for="chapter" class="col-sm-10  col-lg-12 col-form-label">Capítulo</label>
-        </h2>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="text-justify">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste veritatis qui suscipit, laboriosam
-                        minima magni fugiat adipisci sit laudantium earum quis ex fugit eius repudiandae quas. Ipsam,
-                        perferendis? Tempore, aspernatur.
-                        Magni molestiae nobis maiores delectus nesciunt doloremque, nihil dolore nisi. Vitae at ut rerum
-                        perspiciatis! Ipsa omnis animi nesciunt cumque, quisquam accusantium incidunt dolorem enim
-                        repellat optio consequuntur culpa ex.
-                        Similique corporis nemo quidem consectetur ipsa, porro placeat, tempore numquam molestiae sequi
-                        mollitia ducimus, neque odio iusto accusantium. Libero reiciendis adipisci rem similique,
-                        aliquam officiis impedit cupiditate explicabo sequi fugit?
-                        Rerum mollitia reprehenderit iure atque totam architecto vel? Odio laborum laudantium reiciendis
-                        explicabo libero adipisci, praesentium iure maxime temporibus velit, esse commodi sapiente quia
-                        ea. Similique deserunt ad sequi repudiandae?</p>
-
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum repellat rem ducimus velit
-                        perferendis voluptates provident dolorum impedit sint repudiandae neque quod eos eveniet veniam
-                        dolores, nam, quos maxime aperiam?</p>
-
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate nemo deserunt nesciunt quam
-                        quasi nisi doloremque quis itaque laudantium ut ullam ipsam voluptatum adipisci eligendi
-                        doloribus sunt non, molestiae provident?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error sequi corporis sed vero, alias
-                        quae rerum similique nostrum, fuga eius nesciunt dolores earum saepe asperiores? Eum est
-                        necessitatibus mollitia magni.</p>
-                </div>
-            </div>
+        <div class="section-read">
+            {{ content_book | safe }}
         </div>
         <h6>
             <label for="page" class="col-sm-10 col-form-label ">Página</label>
@@ -74,16 +51,15 @@
     <div class="container">
         <div class="text-center mt-auto">
 
-
-            <button type="submit" class="btn fw-bold my-4 btn-text-color" formaction="">
-
+            {% if book.current_page > 0 %}                            
+            <button type="submit" class="btn fw-bold my-4 btn-text-color" formaction="{% url 'book.show' book.id pg|add:'-1' %}">        
                 <i class="bi bi-arrow-left-circle" style="font-size: 20px"></i>
                 Voltar
             </button>
-
+            {% endif %}
             <button type="submit" class="btn fw-bold mx-5 btn-text-color" formaction="{% url 'book.index' %}">Página inicial</button>
 
-            <button type="submit" class="btn fw-bold my-4 btn-text-color" formaction="">
+            <button type="submit" class="btn fw-bold my-4 btn-text-color" formaction="{% url 'book.show' book.id pg|add:'1' %}">
 
                 Próximo
                 <i class="bi bi-arrow-right-circle arrow-dark" style="font-size: 20px;"></i>

@@ -28,10 +28,11 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center">
+            {% for book in books %}
             <div class="col mb-5">
                 <div class="text-center">
                     <!-- Product name-->
-                    <h5 class="fw-bolder">Título</h5>
+                    <h5 class="fw-bolder">{{ book.title }}</h5>
                 </div>
                 <div class="card h-100">
                     <!-- Product image-->
@@ -41,89 +42,15 @@
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
-                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto fw-bold" href="{% url 'book.show'%}">Ler livro</a></div> -->
-                        <form action="">
-                            <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary" formaction="{% url 'book.show'%}" type="submit">Ler livro</button>
-                        </form>
+                        <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto fw-bold" href="{% url 'book.show' book.id book.current_page %}">Ler livro</a></div> -->                        
+                        <a id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary" href="{% url 'book.show' book.id book.current_page %}">Ler livro</a>
+                        
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
-            <div class="col mb-5">
-                <div class="text-center">
-                    <!-- Product name-->
-                    <h5 class="fw-bolder">Título</h5>
-                </div>
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <!-- <a class="btn btn-outline-dark mt-auto fw-bolder" href="{% url 'book.show'%}">Ler livro</a> -->
-                            <form action="">
-                                <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary" formaction="{% url 'book.show'%}" type="submit">Ler livro</button>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- <div class="container">
-                        <div class="text-center fixed-bottom mb-5">
-                          <button type="submit" class="btn btn-outline-dark fw-bold" formaction="{% url 'book.index' %}">Voltar</button>
-                          <button type="submit" class="btn btn-outline-dark fw-bold" formaction="">Salvar</button>
-                        </div>
-                      </div> -->
-
-                    
-                </div>
-            </div>
-
-            <div class="col mb-5">
-                <div class="text-center">
-                    <!-- Product name-->
-                    <h5 class="fw-bolder">Título</h5>
-                </div>
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <form action="">
-                                <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary" formaction="{% url 'book.show'%}" type="submit">Ler livro</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col mb-5">
-                <div class="text-center">
-                    <!-- Product name-->
-                    <h5 class="fw-bolder">Título</h5>
-                </div>
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <!-- <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /> -->
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <form action="">
-                                <button id="btnRead" class="btn btn-outline-dark mt-auto fw-bold btn-dark-primary formaction="{% url 'book.show'%}" type="submit">Ler livro</button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            
             <!-- <button type="submit" id="myButton">but</button> -->
             
         </div>
