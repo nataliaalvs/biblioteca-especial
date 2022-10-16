@@ -4,9 +4,8 @@
 
 {% block btn-login %}
 <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <!-- <i class="bi bi-person-fill me-1" style="font-size: 19px;"></i> -->
-      Nome do usuário</a>
+  <a class="nav-link dropdown-toggle px-0 mx-0 py-1" id="navbarDropdown" href="#" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill" style="font-size:25px ;"></i></a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li><a class="dropdown-item fw-bold" href="{% url 'perfil' %}">Meu perfil</a></li>
       <li><hr class="dropdown-divider" /></li>
@@ -63,7 +62,7 @@
   
   <form action="{% url 'biblioteca' %}" class="container py-4">
     <div class="text-center">
-      <button class="btn btn-outline-dark mt-auto fw-bold btn-block btn-dark-secondary" type="submit">Adicionar</button>
+      <button class="btn btn-dark-secondary btn-terciary" type="submit">Adicionar</button>
     </div>
   </form>
 </div>

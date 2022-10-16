@@ -93,6 +93,11 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+nav {
+  background: #5533ff;
+    background: linear-gradient(45deg, #5533ff 40%, #25ddf5 100%)
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -240,11 +245,11 @@ sup {
 }
 
 a {
-  color: #f4623a;
+  color: #5533ff;
   text-decoration: underline;
 }
 a:hover {
-  color: #c34e2e;
+  color: #5533ff;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -678,6 +683,7 @@ progress {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+  z-index: 0;
 }
 .row > * {
   flex-shrink: 0;
@@ -4034,7 +4040,7 @@ textarea.form-control-lg {
   display: block;
 }
 
-.navbar {
+/* .navbar {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -4042,7 +4048,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
+} */
 
 .navbar > .container,
 .navbar > .container-fluid,
@@ -4554,7 +4560,7 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: 1rem 1rem;
-  
+  margin: 15px;
 }
 
 .card-title {
@@ -7332,6 +7338,10 @@ textarea.form-control-lg {
 
 .mt-5 {
   margin-top: 3rem !important;
+}
+
+.mt-8 {
+  margin-top: 5rem !important;
 }
 
 .mt-auto {
@@ -11307,6 +11317,22 @@ body {
   height: 100%;
 }
 
+.b-section {
+  background-color: lightblue;
+}
+
+.btn-terciary {
+  color: #1d0981;
+  background-color: #0dcdfd;
+  border-color: #0dcdfd;
+  box-shadow: 0px 8px 9px 0px rgba(96, 94, 94, 0.17);
+}
+
+.btn-terciary:hover, .btn-primary:hover {
+  transform: translateY(-2px);
+
+}
+
 .page-section {
   padding: 8rem 0;
 }
@@ -11336,7 +11362,7 @@ hr.divider-light {
   background-color: #fff;
 }
 
-#mainNav {
+/* #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #fff;
   transition: background-color 0.2s ease;
@@ -11396,7 +11422,7 @@ hr.divider-light {
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
     color: #f4623a;
   }
-}
+} */
 
 header.masthead {
   padding-top: 10rem;

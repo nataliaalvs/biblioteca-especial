@@ -1,62 +1,65 @@
 {% extends "base.html" %}
 
 {% load static %}
- <head>
-  <link rel="stylesheet" href="{% static 'dark-login.css' %}">
- </head>
+
 {% block section %}
 
-<section class="v-100 fw-bolder" style="background-color: #263249;">
-    <div class="container py-4 vh-100">
-      <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-xs-5 col-sm-12 col-md-8 col-lg-5">
-          <div class="card shadow-2-strong col-xs-4" style="border-radius: 1rem; border:none">
-            <div class="card-body p-4 text-center col-xs-4">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<section class="v-100 fw-bolder py-5 b-section">
+  <div class="container pt-4 vh-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-10 col-sm-10 col-md-8 col-lg-6">
+        <div class="card shadow-2-strong col-xs-4" style="border-radius: 1rem; border:none">
+          <div class="card-body p-4 text-center">
 
-                {%block titulo%} 
-                <h3 class="mb-4"></i>Entrar <i class="bi bi-book"></i> </h3>
-                {%endblock titulo%}
+            {%block titulo%}
+            <div class="mb-2">
 
-                {%block div-input%}
-                {%endblock div-input%}
-  
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text" for="typeEmailX-2">Email</label>
-                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
-              </div>
-              
-              {% block input-data %}
-              {% endblock input-data %}
-
-              <div class="form-outline mb-3 text-start">
-                <label class="form-label dark-text" for="typePasswordX-2">Senha</label>
-                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-              </div>
-
-              {% block input-senha %}
-              {% endblock input-senha %}
-
-              {% block register %}
-              <div>
-                <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'cadastro' %}">Criar nova conta</a>
-                </p>
-              </div>
-              {% endblock register %}
-              
-              {% block btn%}
-              <form action="{% url 'biblioteca' %}">
-
-                  <button class="btn btn-primary btn-lg btn-block btn-dark-secondary" type="submit">Entrar</button>
-              </form>
-              {% endblock btn%}
-
-  
+              <span><i style="font-size:35px" class="bi bi-book"></i> </span>
+              <h3 class="mb-2">Bem vindo de volta!</h3>
+              <p class="fw-normal" style="color: gray">Insira seus dados para acessar sua conta</p>
             </div>
+            {%endblock titulo%}
+
+            {%block div-input%}
+            {%endblock div-input%}
+
+            <div class="form-outline mb-2 text-start">
+              <label class="form-label dark-text" for="typeEmailX-2">Email</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+            </div>
+
+            {% block input-data %}
+            {% endblock input-data %}
+
+            <div class="form-outline mb-3 text-start">
+              <label class="form-label dark-text" for="typePasswordX-2">Senha</label>
+              <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+            </div>
+
+            {% block input-senha %}
+            {% endblock input-senha %}
+
+            {% block register %}
+            <div>
+              <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'cadastro' %}">Criar nova conta</a>
+              </p>
+            </div>
+            {% endblock register %}
+
+            {% block btn%}
+            <form action="{% url 'biblioteca' %}">
+
+              <button class="btn btn-terciary btn-lg btn-block btn-dark-primary fw-bold" type="submit">Entrar</button>
+            </form>
+            {% endblock btn%}
+
+
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  {%endblock section%}
-
+{%endblock section%}
