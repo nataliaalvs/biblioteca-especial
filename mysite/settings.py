@@ -28,6 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Para utilizar a autenticação customizada é interessante adicionar:
+AUTH_USER_MODEL = 'customauth.MyUser'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'customauth',
     'bib',
 ]
 
@@ -122,3 +126,7 @@ STATIC_URL = '/bib/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Para utilizar a autenticação customizada é interessante adicionar:
+LOGIN_REDIRECT_URL = 'book.index' # página para onde o login irá redirecionar ao ser finalizado
+LOGOUT_REDIRECT_URL = 'home' # página para onde o logout irá redirecionar ao ser finalizado

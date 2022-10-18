@@ -1,0 +1,43 @@
+{% extends '../layouts/base.html' %}
+
+{%block opcoes-navbar%}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+    aria-expanded="false">Opções</a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li><a class="dropdown-item" href="{% url 'book.create' %}">Adicionar livro</a></li>
+    <li>
+      <hr class="dropdown-divider" />
+    </li>
+    <li><a class="dropdown-item" href="{% url 'user.config' %}">Configurações</a></li>
+  </ul>
+</li>
+{% endblock opcoes-navbar%}
+
+{% block btn-login %}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <!-- <i class="bi bi-person-fill me-1" style="font-size: 19px;"></i> -->
+      Nome do usuário</a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item fw-bold" href="{% url 'user.profile' %}">Meu perfil</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item fw-bold" href="#!">Sair</a></li>
+  </ul>
+</li>
+{% endblock btn-login %}
+
+{% block section %}
+
+<div class="text-center m-4">
+  <h2 class="fw-bolder">Adicionar novo livro</h2>
+</div>
+
+<form class="fw-bolder col-md-6 offset-md-3 my-3" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form }}
+  <div class="text-center mt-4">
+    <button class="btn btn-outline-dark mt-auto fw-bold btn-block btn-dark-secondary" type="submit">Adicionar</button>
+  </div>
+</form>
+{% endblock section %}

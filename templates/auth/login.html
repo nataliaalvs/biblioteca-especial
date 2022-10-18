@@ -1,0 +1,35 @@
+{% extends "../layouts/base.html" %}
+{% load static %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'dark-login.css' %}">
+</head>
+{% block section %}
+<section class="v-100 fw-bolder" style="background-color: #263249;">
+  <div class="container py-4 vh-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-8 col-lg-5 mt-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem; border:none">
+          <div class="card-body p-4 text-center">
+            <h3 class="mb-4">Entrar</h3>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div>
+                <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'auth.register' %}">Criar nova
+                    conta</a>
+                </p>
+              </div>
+
+              <button class="btn btn-primary btn-lg btn-block btn-dark-secondary" type="submit">Entrar</button>
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%endblock section%}
