@@ -1,0 +1,56 @@
+{% extends "login.html" %}
+
+<div class="container">
+  {%block titulo%} 
+  <div class="mb-2">
+  
+    <span><i style="font-size:35px" class="bi bi-book"></i> </span>
+    <h3 class="mb-2">Cadastre-se</h3>
+    <p class="fw-normal" style="color: gray">Insira seus dados para criar um conta</p>
+  </div>
+  {%endblock titulo%} 
+  
+  <div class="col-12 col-md-8 col-lg-7 "></div>
+  {% block div-input %}
+  <div class="row">
+      <div class="col-md-6 mb-2">
+        <div class="form-outline text-start">
+          <label class="form-label dark-text" for="form3Example1">Nome</label>
+          <input type="text" id="form3Example1" class="form-control" />
+        </div>
+      </div>
+      <div class="col-md-6 mb-2">
+        <div class="form-outline text-start">
+          <label class="form-label dark-text" for="form3Example2">Sobrenome</label>
+          <input type="text" id="form3Example2" class="form-control" />
+        </div>
+      </div>
+  </div>
+  
+  {% endblock div-input%}
+  
+  {% block input-data %}
+  <div class="form-outline mb-3 text-start">
+    <label class="form-label dark-text" for="typePasswordX-2">Data de nascimento</label>
+    <input type="date" id="typePasswordX-2" class="form-control form-control-lg" />
+  </div>
+  {% endblock input-data%}
+  
+  {% block input-senha %}
+  <div class="form-outline mb-3 text-start">
+    <label class="form-label dark-text" for="typePasswordX-2">Confirme sua senha</label>
+    <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+  </div>
+  {% endblock input-senha %}
+  
+  {% block register %}{% endblock register %}
+  
+  
+  {% block btn%}
+  <form action="{% url 'biblioteca' %}">
+  
+      <button class="btn btn-terciary btn-lg btn-block btn-dark-primary fw-bold" type="submit">Cadastrar</button>
+  </form>
+  {%endblock btn%}
+
+</div>

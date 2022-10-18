@@ -1,3 +1,12 @@
+<== front
+{% extends "base.html" %}
+{% load static %}
+{% block btn-login %}
+<form class="d-flex my-3" action="{% url 'login' %}">
+  <button class="btn btn-primary fw-bold btn-dark-primary" type="submit">
+    Entrar
+  </button>
+=======
 {% extends './layouts/base.html' %}
 
 {% block btn-login %}
@@ -6,10 +15,176 @@
         <!-- <i class="bi bi-person-fill" style="font-size: 19px"></i> -->
         Entrar
     </button>
+==> dev
 </form>
 {% endblock btn-login %}
 
 {% block header %}
+<== front
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<header id="home" class="hero-area">
+  <div class="overlay">
+    <span></span>
+    <span></span>
+  </div>
+  <div class="container">
+    <div class="row space-100">
+      <div class="col-lg-6 col-md-12 col-xs-12">
+        <div class="contents">
+          <h2 class="head-title">A ferramenta que é sua aliada!</h2>
+          <p>Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
+          <div class="header-button">
+            <a href="{% url 'login' %}" class="btn btn-terciary fw-bold">Entrar</a>
+            <a href="#services" class="btn btn-border fw-bold">Mais informações</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-xs-12 p-0">
+        <div class="intro-img">
+          <img src="{% static 'images/reading-phone.png' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr style="height: 2px">
+
+{% endblock header%}
+
+{% block section %}
+<section id="services" class="section">
+  <div class="container fw-bolder">
+
+    <div class="row">
+      <!-- Start Col -->
+      <!-- <div class="col-lg-4 col-md-6 col-xs-12"> -->
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
+
+        <div class="services-item text-center">
+          <div class="icon">
+            <i class="bi bi-toggles"></i>
+          </div>
+          <h4>Qualidade 1</h4>
+          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+        </div>
+      </div>
+      <!-- End Col -->
+      <!-- Start Col -->
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
+        <div class="services-item text-center">
+          <div class="icon">
+            <i class="lni-brush"></i>
+          </div>
+          <h4>Slick Design</h4>
+          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+        </div>
+      </div>
+      <!-- End Col -->
+      <!-- Start Col -->
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
+        <div class="services-item text-center">
+          <div class="icon">
+            <i class="fa-solid fa-text-size"></i>                    </div>
+          <h4>Crafted with Love</h4>
+          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+        </div>
+      </div>
+      <!-- End Col -->
+
+    </div>
+  </div>
+</section>
+
+{% endblock section %}
+
+{% block footer %}
+
+<footer id="footer">
+  <!-- Footer Area Start -->
+  <section id="footer-Content" class="dark-footer">
+    <div class="container container-fluid fw-bolder">
+      <!-- Start Row -->
+      <div class="row">
+
+        <!-- Start Col -->
+        <!-- <div class="col-lg-4 col-md-10 col-12 col-sm-12 col-xs-4 col-mb-12"> -->
+        <div class="col-12 col-md-4 col-sm-4 col-lg-">
+          <!-- <div class="col-12 col-md-12 col-lg-4 col-sm-12"> -->
+
+          <div class="footer-logo">
+            <img src="{% static 'images/logo/logo2.svg' %}" alt="">
+            <!-- <h2>Biblioteca Especial</h2> -->
+          </div>
+        </div>
+        <!-- End Col -->
+        <!-- Start Col --
+          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+            <div class="widget">
+              <h3 class="block-title">Company</h3>
+              <ul class="menu">
+                <li><a href="#">  - About Us</a></li>
+                <li><a href="#">- Career</a></li>
+                <li><a href="#">- Blog</a></li>
+                <li><a href="#">- Press</a></li>
+              </ul>
+            </div>
+          </div>
+           <!-- End Col -->
+        <!-- Start Col -->
+        <div class="col-10 col-md-12 col-lg-3 col-sm-12">
+          <div class="widget">
+            <h3 class="block-title">Informações 1</h3>
+            <p>Feito em DJANGO Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora expedita voluptate mollitia labore deserunt cupiditate officiis, numquam quas nesciunt laborum! Harum tempori</p>
+            </ul>
+          </div>
+        </div>
+        <!-- Start Col -->
+        <div class="col-10 col-md-12 col-lg-2 col-sm-12">
+          <div class="widget">
+            <h3 class="block-title">Informações 2</h3>
+            <p>Appropriately implement calysts for change visa wireless catalysts for change. </p>
+            <!-- <div class="subscribe-area"> -->
+            <!-- <input type="email" class="form-control" placeholder="Enter Email">
+                <span><i class="lni-chevron-right"></i></span> -->
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-3 col-sm-12">
+          <div class="widget">
+            <h3 class="block-title">Informações 3</h3>
+            <p>Appropriately implement calysts for change visa wireless catalysts for change. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error quos, nulla minus neque enim suscipit voluptatem temporibus? </p>
+          </div>
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- Copyright Start  -->
+
+    <div class="copyright">
+      <div class="container">
+        <!-- Star Row -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="site-info text-center">
+              <!-- <p>Crafted by <a href="http://uideck.com" rel="nofollow">UIdeck</a></p> -->
+              <p> Biblioteca Especial</p>
+            </div>
+
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </div>
+    </div>
+    <!-- Copyright End -->
+  </section>
+  <!-- Footer area End -->
+
+</footer>
+=======
 <header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
@@ -47,5 +222,6 @@
 
 
 </footer> -->
+==> dev
 
 {% endblock footer%}

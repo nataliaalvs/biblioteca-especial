@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{%block opcoes-navbar%} {% endblock opcoes-navbar%}
+
+{% block btn-login %}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle px-0 mx-0 py-1" id="navbarDropdown" href="#" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill" style="font-size:25px ;"></i></a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item fw-bold" href="{% url 'perfil' %}">Meu perfil</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item fw-bold" href="#!">Sair</a></li>
+  </ul>
+</li>
+{% endblock btn-login %}
+
+{% block section %}
+
+
+<div class="container">
+  <div class="text-center m-4">
+    <h2 class="fw-bolder" tabindex="0">Adicionar novo livro</h2>
+  </div>
+
+  <form class="fw-bolder div-center">
+    <div class="form-group mb-3">
+      <label for="formGroupExampleInput">Nome do livro</label>
+      <input type="text" class="form-control" id="bookName" placeholder="Nome do livro">
+    </div>
+    <div class="form-group mb-3">
+      <label for="formGroupExampleInput2">Nome do autor</label>
+      <input type="text" class="form-control" id="authorName" placeholder="Nome do autor">
+    </div>
+    <div class="form-group mb-3">
+      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Gênero</label>
+      <select class="custom-select mr-sm-2 rounded" id="selectOptions">
+        <option selected>Selecione...</option>
+        <option value="1">Drama</option>
+        <option value="2">Romance</option>
+        <option value="3">Thriller e Suspense</option>
+        <option value="4">Aventura</option>
+        <option value="5">Fantasia</option>
+        <option value="6">Romance policial</option>
+        <option value="7">Clássico</option>
+        <option value="8">Infantil</option>
+        <option value="9">Distopia</option>
+        <option value="10">Ficção científica</option>
+        <option value="11">Graphic novel</option>
+        <option value="12">Crimes reais</option>
+        <option value="13">Autoajuda</option>
+        <option value="14">Tecnologia e ciência</option>
+      </select>
+    </div>
+    <div class="form-group mb-4">
+      <label for="exampleFormControlFile1">Adicionar livro</label>
+      <div class="form-group">
+
+        <input type="file" class="form-control-file" id="addBook" name="addBook">
+      </div>
+    </div>
+  </form>
+  
+  <form action="{% url 'biblioteca' %}" class="container py-4">
+    <div class="text-center">
+      <button class="btn btn-dark-secondary btn-terciary" type="submit">Adicionar</button>
+    </div>
+  </form>
+</div>
+
+{% endblock section %}
