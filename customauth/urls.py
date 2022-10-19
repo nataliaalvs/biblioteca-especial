@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from customauth.views import *
-from django.views.generic.base import TemplateView # new
 
 urlpatterns = [    
     path('register/', register, name='auth.register'),
