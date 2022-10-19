@@ -18,7 +18,8 @@ def index_book(request):
 @login_required(login_url='auth.login')
 def create_book(request):   
     form = BookForm(request.POST, request.FILES)
-    if form.is_valid():        
+    if form.is_valid():   
+        form.instance.user = request.user
         form.save() 
         # book = Book.objects.get(path=form.cleaned_data['path'])
         # convert(str(form.cleaned_data['path']), request.user.id)
@@ -32,14 +33,18 @@ def create_book(request):
 @login_required(login_url='auth.login')
 def show_book(request, id, pg):
     book = Book.objects.get(pk=id)
-    if str(book.user_id) == str(request.user.email):
+    if str(book.user) == str(request.user.email):
         pdfFileObj = open(str(book.path), 'rb')
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj)    
         count = pdfReader.numPages
-        if count >= pg:
+        if count > pg:
             book.current_page = pg
             book.save()
-            content_book = ('<h2> <label for="chapter" class="col-sm-10  col-lg-12 col-form-label">Pág. ' +str(pg)+ '</label> </h2> <div class="row"> <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <div class="text-justify">' + pdfReader.getPage(pg).extractText() + ' </div> </div> </div> <br>')
+            if (count - 1) == pg:
+                content_book = (pdfReader.getPage(pg).extractText() +'<br> <h3 class="text-center">FIM</h3>')
+            else:
+                content_book = (pdfReader.getPage(pg).extractText() +'<br>')
+
             pdfFileObj.close()
             return render(request, 'books/show.html', { 'content_book': content_book, 'book': book, 'pg': pg })
 

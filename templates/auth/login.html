@@ -1,28 +1,40 @@
 {% extends "../layouts/base.html" %}
+
 {% load static %}
 
-<head>
-  <link rel="stylesheet" href="{% static 'dark-login.css' %}">
-</head>
 {% block section %}
-<section class="v-100 fw-bolder" style="background-color: #263249;">
-  <div class="container py-4 vh-100">
-    <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-12 col-md-8 col-lg-5 mt-5">
-        <div class="card shadow-2-strong" style="border-radius: 1rem; border:none">
-          <div class="card-body p-4 text-center">
-            <h3 class="mb-4">Entrar</h3>
-            <form method="post">
-              {% csrf_token %}
-              {{ form.as_p }}
-              <div>
-                <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'auth.register' %}">Criar nova
-                    conta</a>
-                </p>
-              </div>
 
-              <button class="btn btn-primary btn-lg btn-block btn-dark-secondary" type="submit">Entrar</button>
-            </form>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<section class="v-100 fw-bolder py-5 b-section">
+  <div class="container pt-4 vh-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-10 col-sm-10 col-md-8 col-lg-6">
+        <div class="card shadow-2-strong col-xs-4" style="border-radius: 1rem; border:none">
+          <div class="card-body p-4 text-center">
+            <div class="mb-2">
+              <span><i style="font-size:35px" class="bi bi-book"></i> </span>
+              <h3 class="mb-2">Bem vindo de volta!</h3>
+              <p class="fw-normal" style="color: gray">Insira seus dados para acessar sua conta</p>
+            </div>
+
+            <form method="post">
+            {% csrf_token %}
+            <div class="form-outline mb-2 text-start">
+              <label class="form-label dark-text" for="id_email">Email</label>
+              <input type="email" name="email" id="id_email" class="form-control form-control-lg" maxlength="255" required autofocus="true" />
+            </div>
+
+            <div class="form-outline mb-3 text-start">
+              <label class="form-label dark-text" for="id_password">Senha</label>
+              <input type="password" name="password" id="id_password" class="form-control form-control-lg" autocomplete="current-password" required/>
+            </div>
+
+            <div>
+              <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'auth.register' %}">Criar nova conta</a>
+              </p>
+            </div>
+              <button class="btn btn-terciary btn-lg btn-block btn-dark-primary fw-bold" type="submit">Entrar</button>
+          </form>
 
 
           </div>
