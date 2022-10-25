@@ -1,0 +1,44 @@
+{% extends 'layouts/base.html' %}
+{%load static%}
+{% block opcoes-navbar %} {% endblock %}
+{% block section %}
+<div class="container">
+    <section class="dark-section">
+        <h3 class="title dark-white">Meus livros</h3>
+        <div class="d-flex flex-row-reverse bd-highlight mx-5 px-lg-8">
+            <form action="{% url 'book.create' %}">
+                <!-- <i class="bi bi-plus-circle d-block d-sm-block d-md-none" style="font-size:32px"></i> -->
+                </span>
+                <button class="btn btn-primary btn-terciary px-lg-8 fw-bold" type="submit" style="border-radius: 50px;">
+                    Adicionar livro
+                </button>
+            </form>
+        </div>
+
+
+
+        <div class="px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                {% for book in books %}
+                <div class="col-12 mb-5">
+                    <div class="card h-100 card-color col-md-12 col-sm-12 col-12 card-shadow">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder col-12" tabindex="0">{{ book.title }}</h5>
+                            </div>
+                        </div>
+                        <!-- Actions-->
+                        <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">                            
+                            <div>
+                                <a id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary"
+                                    href="{% url 'book.show' book.id book.current_page %}" type="submit">Ler livro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock section %}

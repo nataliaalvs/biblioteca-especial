@@ -1,4 +1,4 @@
-"""bib URL Configuration
+"""customauth URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,16 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from bib.views import *
+from django.urls import path, include
+from customauth.views import *
 
-urlpatterns = [
-    path('books/', index_book, name="book.index"),
-    path('book/novo/', create_book, name="book.create"),
-    path('book/<int:id>/<int:pg>', show_book, name='book.show'),
-    path('config/', config, name="user.config"),
-    path('perfil/', profile, name='user.profile'),
-    path('dark/', dark, name='dark'),
-
-
+urlpatterns = [    
+    path('register/', register, name='auth.register'),
+    path('login/', login, name='auth.login'),
+    path('logout/', logout, name='auth.logout'),
+    
+    
 ]

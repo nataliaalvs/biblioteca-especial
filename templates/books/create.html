@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+{% block section %}
+
+<div class="container">
+  <div class="text-center m-4">
+    <h2 class="fw-bolder" tabindex="0">Adicionar novo livro</h2>
+  </div>
+
+
+  <form class="fw-bolder div-center"  method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group mb-3">
+        {{ field.label_tag }}
+        {{ field }}
+      </div>
+    {% endfor %}
+    <div class="container py-4">
+      <div class="text-center">
+        <button class="btn btn-dark-secondary btn-terciary" type="submit">Adicionar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock section %}

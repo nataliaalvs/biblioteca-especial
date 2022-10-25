@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{%block opcoes-navbar%} 
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Opções</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item fw-bold" href="{% url 'addLivro' %}">Adicionar livro</a></li>
+        <li><hr class="dropdown-divider" /></li>
+    </ul>
+</li>
+{% endblock opcoes-navbar%}
+
+{% block btn-login %}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <!-- <i class="bi bi-person-fill me-1" style="font-size: 19px;"></i> -->
+      Nome do usuário</a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item fw-bold" href="{% url 'perfil' %}">Meu perfil</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item fw-bold" href="#!">Sair</a></li>
+  </ul>
+</li>
+{% endblock btn-login %}
+
+{% block section %}
+
+<div class="text-center m-4">
+  <!-- Product name-->
+  <h2 class="fw-bolder">Configurações</h2>
+</div>
+
+<form>
+    <label for="staticEmail" class="col-sm-2 col-form-label ms-5">Tema</label>
+
+    <div class="row ms-4">
+        <div class="col-md-4 col-xs-4">
+          <div class="form-check">
+            <!-- <label for="unidadeVolume">Grupo:</label> -->
+            <label class="form-check-label" for="exampleRadios1">
+              Claro
+            </label>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <div class="form-check">
+              <!-- <label for="unidadeVolume">Grupo:</label> -->
+              <label class="form-check-label" for="exampleRadios1">
+                Alto contraste
+              </label>
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-4">
+            <div class="form-check">
+              <!-- <label for="unidadeVolume">Grupo:</label> -->
+              <label class="form-check-label" for="exampleRadios1">
+                Escuro
+              </label>
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+            </div>
+          </div>
+
+          <div class="form-group my-4">
+            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Tamanho da fonte</label>
+            <select class="custom-select mr-sm-2 rounded" id="inlineFormCustomSelect">
+              <option selected>Selecione...</option>
+              <option value="1">14</option>
+              <option value="2">16</option>
+              <option value="3">18</option>
+              <option value="4">20</option>
+              <option value="5">22</option>
+            </select>
+          </div>
+
+
+          <div class="container">
+            <div class="text-center fixed-bottom mb-5">
+              <button type="submit" class="btn btn-outline-dark fw-bold btn-dark-secondary" formaction="{% url 'biblioteca' %}">Voltar</button>
+              <button type="submit" class="btn btn-outline-dark fw-bold btn-dark-secondary" formaction="">Salvar</button>
+            </div>
+          </div>
+  </form>
+{% endblock section %}

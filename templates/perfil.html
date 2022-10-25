@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{%block opcoes-navbar%} {% endblock opcoes-navbar%}
+
+{% block btn-login %}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle px-0 mx-0 py-1" id="navbarDropdown" href="#" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill" style="font-size:25px ;"></i></a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item fw-bold" href="{% url 'perfil' %}">Meu perfil</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item fw-bold" href="#!">Sair</a></li>
+  </ul>
+</li>
+{% endblock btn-login %}
+{% block section %}
+
+<div class="container">
+  <div class="text-center py-4">
+    <h2 class="fw-bolder">Dados pessoais</h2>
+  </div>
+
+  <form class="div-center fw-bolder">
+    <div class="form-group row">
+      <div class="col-md-6 mb-2">
+        <div class="form-outline">
+          <label class="form-label" for="form3Example1">Nome</label>
+          <input type="text" id="name" class="form-control" value="Nome" />
+        </div>
+      </div>
+  
+      <div class="col-md-6 mb-2">
+        <div class="form-outline">
+          <label class="form-label" for="form3Example2">Sobrenome</label>
+          <input type="text" id="lastname" class="form-control" value="Sobrenome" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-outline mb-2">
+      <label class="form-label" for="form3Example2">Email</label>
+      <input type="email" id="email" class="form-control" value="nome@algo.com" />
+    </div>
+
+    <div class="form-outline mb-2">
+      <label class="form-label" for="form3Example2">Data de nascimento</label>
+      <input type="date" id="birthDate" class="form-control" value="2022-07-22"
+      min="1912-01-01"/>
+    </div>
+  
+    <!-- <div class="form-outline mb-2">
+      <label class="form-label" for="form3Example2">Senha</label>
+      <input type="password" id="password" class="form-control" value="estAeaSenha!@" />
+    </div> -->
+
+    <div class="form-outline my-5"> 
+    </div>
+
+    <div class="container">
+      <a href="" class="dark-white">Mudar minha senha</a>
+    </div>
+
+    <div class="container py-4">
+      <div class="text-center">
+        <button type="submit" class="btn btn-dark-secondary btn-terciary" formaction="{% url 'biblioteca' %}">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock section %}
