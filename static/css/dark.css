@@ -78,7 +78,7 @@
     color: #000;
 }
 
-.contrast input[type=text] {
+.contrast input[type=text], .contrast .i-home, .contrast .i-prev, .contrast .i-next {
     color: white;
 }
 

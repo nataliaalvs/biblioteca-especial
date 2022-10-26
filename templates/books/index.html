@@ -4,7 +4,7 @@
 {% block section %}
 <div class="container">
     <section class="dark-section">
-        <h3 class="title dark-white">Meus livros</h3>
+        <h3 class="title dark-white" tabindex="0">Meus livros</h3>
         <div class="d-flex flex-row-reverse bd-highlight mx-5 px-lg-8">
             <form action="{% url 'book.create' %}">
                 <!-- <i class="bi bi-plus-circle d-block d-sm-block d-md-none" style="font-size:32px"></i> -->
@@ -27,11 +27,14 @@
                                 <h5 class="fw-bolder col-12" tabindex="0">{{ book.title }}</h5>
                             </div>
                         </div>
-                        <!-- Actions-->
                         <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">                            
-                            <div>
+                            <div class="d-flex  justify-content-around align-items-center">
                                 <a id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary"
-                                    href="{% url 'book.show' book.id book.current_page %}" type="submit">Ler livro</a>
+                                    href="{% url 'book.show' book.id book.current_page %}" type="submit" aria-label="Ler {{ book.title }}">Ler livro</a>
+                            <div>
+                                <a href="{% url 'book.delete' book.pk %}" ><i class="bi bi-trash" aria-label="Deletar {{ book.title }}"></i></a>
+                            </div>
+
                             </div>
                         </div>
                     </div>

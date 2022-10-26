@@ -13,34 +13,28 @@
     <h2 class="fw-bolder" aria-label="{{ book.title }}">{{ book.title }}</h2>
 </div>
 
-    <form class="mx-2">
-        <div class="col-sm-10  col-lg-12 col-form-label">
-            <!-- <div class="mr-auto p-2"> -->
-            <label for="chapter">
-                <h2 aria-label="Capítulo do livro">Capítulo</h2>
-            </label>
-        </div>
+    <form class="mx-2 mt-5">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="section-read">
+                <div class="section-read" tabindex="0">
                     {{ content_book | safe }}
                 </div>
                 <h6>
-                    <label for="page" class="col-sm-10 col-form-label" aria-label="Página {{ book.current_page }}">Página {{ book.current_page }}</label>
+                    <label for="page" class="col-sm-10 col-form-label" aria-label="Página {{ book.current_page }}"  tabindex="0">Página {{ book.current_page }}</label>
                 </h6>
             </div>
         </div>
         <!-- <div class="container"> -->
         <div class="text-center mt-auto">
             {% if book.current_page > 0 %}                            
-            <button type="submit" class="btn fw-bold my-4 btn-text-color" aria-label="Ícone de seta para ir para a página seguinte" formaction="{% url 'book.show' book.id pg|add:'-1' %}">
-                <i class="bi bi-arrow-left" style="font-size: 20px"></i>
+            <button type="submit" class="btn fw-bold my-4 btn-text-color" aria-label="Voltar à página anterior" formaction="{% url 'book.show' book.id pg|add:'-1' %}">
+                <i class="bi bi-arrow-left i-prev" style="font-size: 20px;"></i>
             </button>
             {% endif %}
-            <button type="submit" class="btn fw-bold mx-sm-4 mx-md-4 mx-lg-5 btn-text-color" aria-label="Ícone para voltar ao início" formaction="{% url 'book.index' %}"><i class="bi bi-house"></i></button>
+            <button type="submit" class="btn fw-bold mx-sm-4 mx-md-4 mx-lg-5 btn-text-color" aria-label="Ícone para voltar ao início" formaction="{% url 'book.index' %}"><i class="bi bi-house i-home"></i></button>
             
-            <button type="submit" class="btn fw-bold my-4 btn-text-color" aria-label="Ícone de seta para voltar à página anterior" formaction="{% url 'book.show' book.id pg|add:'1' %}">
-                <i class="bi bi-arrow-right arrow-dark" style="font-size: 20px;"></i>
+            <button type="submit" class="btn fw-bold my-4 btn-text-color" aria-label="Ir para a página seguinte" formaction="{% url 'book.show' book.id pg|add:'1' %}">
+                <i class="bi bi-arrow-right arrow-dark i-next" style="font-size: 20px;"></i>
             </button>
 
         </div>
