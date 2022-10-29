@@ -10,24 +10,26 @@
   <div class="container">
     <div class="row space-100">
       <div class="col-lg-6 col-md-12 col-xs-12">
-        <div class="contents">
-          <h2 class="head-title">A ferramenta que é sua aliada!</h2>
-          <p>Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
+        <div class="contents dark-font">
+          <h2 class="head-title" aria-label="A ferramenta que é sua aliada!" tabindex="0">A ferramenta que é sua aliada!</h2>
+          <p tabindex="0" aria-label="Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
           <div class="header-button">
-            <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold" tabindex="0" aria-label="Entrar no sistema">Entrar</a>
-            <a href="#services" class="btn btn-border fw-bold" tabindex="0" aria-label="Mais informações">Mais informações</a>
+            <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold" tabindex="0"
+              aria-label="Entrar no sistema">Entrar</a>
+            <a href="#services" class="btn btn-border fw-bold" tabindex="0" aria-label="Mais informações sobre o site">Mais
+              informações</a>
           </div>
         </div>
       </div>
       <div class="col-lg-6 col-md-12 col-xs-12 p-0">
         <div class="intro-img">
-          <img src="{% static 'images/reading-phone.png' %}" alt="">
+          <img src="{% static 'images/reading-phone.png' %}" alt="Imagem de uma pessoa usando uma biblioteca pelo celular">
         </div>
       </div>
     </div>
   </div>
 </header>
-
+<hr style="border: 1px solid lightgray">
 {% endblock header%}
 
 {% block section %}
@@ -39,34 +41,35 @@
       <!-- <div class="col-lg-4 col-md-6 col-xs-12"> -->
       <div class="col-12 col-md-12 col-lg-4 col-sm-12">
 
-        <div class="services-item text-center">
+        <div class="services-item text-center" tabindex="0">
           <div class="icon">
-            <i class="bi bi-toggles"></i>
+            <i class="bi bi-toggles" aria-label="Ícone de um troca de tema" tabindex="0"></i>
           </div>
-          <h4>Qualidade 1</h4>
-          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+          <h4 tabindex="0" aria-label="Alto contraste">Alto contraste</h4>
+          <p tabindex="0" aria-label="Use o nosso tema de alto contraste para ter uma leitura menos cansativa.">Use o nosso tema de alto contraste para ter uma leitura menos cansativa.</p>
         </div>
       </div>
       <!-- End Col -->
       <!-- Start Col -->
       <div class="col-12 col-md-12 col-lg-4 col-sm-12">
-        <div class="services-item text-center">
+        <div class="services-item text-center" tabindex="0">
           <div class="icon">
-            <i class="lni-brush"></i>
+            <i class="bi bi-type" aria-label="Ícone indicando mudança no tamanho da fonte" tabindex="0"></i>
           </div>
-          <h4>Slick Design</h4>
-          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+          <h4 aria-label="Tamanho da fonte" tabindex="0">Tamanho da fonte</h4>
+          <p tabindex="0" aria-label="Altere o tamanho da fonte e deixe o site na sua preferência para ler.">Altere o tamanho da fonte e deixe o site na sua preferência para ler.
+          </p>
         </div>
       </div>
       <!-- End Col -->
       <!-- Start Col -->
       <div class="col-12 col-md-12 col-lg-4 col-sm-12">
-        <div class="services-item text-center">
+        <div class="services-item text-center" tabindex="0">
           <div class="icon">
-            <i class="fa-solid fa-text-size"></i>
+            <i class="bi bi-journals" aria-label="ícone de um livro" tabindex="0"></i>
           </div>
-          <h4>Crafted with Love</h4>
-          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+          <h4 tabindex="0" aria-label="Biblioteca">Biblioteca</h4>
+          <p tabindex="0" aria-label="Converta e guarde seus livros preferidos em pdf tudo em apenas um lugar.">Converta e guarde seus livros preferidos em pdf tudo em apenas um lugar.</p>
         </div>
       </div>
       <!-- End Col -->
@@ -79,50 +82,34 @@
 
 {% block footer %}
 
-<footer id="footer">
+
   <!-- Footer Area Start -->
   <section id="footer-Content" class="dark-footer">
     <div class="container container-fluid fw-bolder">
       <!-- Start Row -->
       <div class="row">
 
-        <!-- Start Col -->
-        <!-- <div class="col-lg-4 col-md-10 col-12 col-sm-12 col-xs-4 col-mb-12"> -->
-        <div class="col-12 col-md-4 col-sm-4 col-lg-">
-          <!-- <div class="col-12 col-md-12 col-lg-4 col-sm-12"> -->
-
-          <div class="footer-logo">
-            <img src="{% static 'images/logo/logo2.svg' %}" alt="">
-            <!-- <h2>Biblioteca Especial</h2> -->
+        <div class="col-12 col-md-5 col-sm-4 col-lg-4">
+          <div class="footer-logo col-12">
+            <img src="{% static 'images/logo/logo2.svg' %}" alt="Logo do site" aria-label="Biblioteca especial" tabindex="0">
           </div>
         </div>
-        <!-- End Col -->
         <!-- Start Col -->
-        <div class="col-10 col-md-12 col-lg-3 col-sm-12">
+        <div class="col-10 col-md-12 col-lg-4 col-sm-12">
           <div class="widget">
-            <h3 class="block-title">Informações 1</h3>
-            <p>Feito em DJANGO Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora expedita voluptate mollitia labore deserunt cupiditate officiis, numquam quas nesciunt laborum! Harum tempori</p>
+            <h3 class="block-title" tabindex="0" aria-label="Sobre a biblioteca especial">Sobre a biblioteca especial</h3>
+            <p tabindex="0" aria-label="Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.">Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.</p>
+          </div>
+        </div>
+        <div class="col-10 col-md-12 col-lg-4 col-sm-12">
+          <div class="widget">
+            <h3 class="block-title" tabindex="0" aria-label="Informações técnicas">Informações técnicas</h3>
+            <p tabindex="0" aria-label="Programado em DJANGO">Programado em DJANGO </p>
+            <p tabindex="0" aria-label="Responsáveis: Alunos do IFRN">Responsáveis: Alunos do IFRN - CA</p>
+            <p tabindex="0" aria-label="Data de finalização: 04/11/2022">Data de finalização: 04/11/2022 </p>
             </ul>
           </div>
         </div>
-        <!-- Start Col -->
-        <div class="col-10 col-md-12 col-lg-2 col-sm-12">
-          <div class="widget">
-            <h3 class="block-title">Informações 2</h3>
-            <p>Appropriately implement calysts for change visa wireless catalysts for change. </p>
-            <!-- <div class="subscribe-area"> -->
-            <!-- <input type="email" class="form-control" placeholder="Enter Email">
-                <span><i class="lni-chevron-right"></i></span> -->
-            <!-- </div> -->
-          </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-3 col-sm-12">
-          <div class="widget">
-            <h3 class="block-title">Informações 3</h3>
-            <p>Appropriately implement calysts for change visa wireless catalysts for change. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error quos, nulla minus neque enim suscipit voluptatem temporibus? </p>
-          </div>
-        </div>
-        <!-- End Col -->
       </div>
       <!-- End Row -->
     </div>
