@@ -25,6 +25,8 @@ urlpatterns = [
     path('config/', config, name="user.config"),
     path('perfil/', profile, name='user.profile'),
     path('dark/', dark, name='dark'),
+    path('font_plus/', font_plus, name='font_plus'),
+    path('font_less/', font_less, name='font_less'),
 
 
 ]

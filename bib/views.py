@@ -67,3 +67,18 @@ def profile(request):
 
 def dark(request):   
     return render(request, 'dark.html')
+
+def font_plus(request):
+    user = MyUser.objects.get(pk=request.user.id)
+    user.font_size = user.font_size + 1
+    user.save()
+    next = request.POST.get('next', '/')    
+    return redirect(next)
+
+def font_less(request):
+    user = MyUser.objects.get(pk=request.user.id)
+    user.font_size = user.font_size - 1
+    user.save()
+    next = request.POST.get('next', '/')
+    
+    return redirect(next)

@@ -4,7 +4,7 @@
 {% block section %}
 <div class="container">
     <section class="dark-section">
-        <h3 class="title dark-white" tabindex="0">Meus livros</h3>
+        <h3 class="title dark-white font-sizing" tabindex="0">Meus livros</h3>
         <div class="d-flex flex-row-reverse bd-highlight mx-5 px-lg-8">
             <form action="{% url 'book.create' %}">
                 <!-- <i class="bi bi-plus-circle d-block d-sm-block d-md-none" style="font-size:32px"></i> -->
@@ -45,3 +45,7 @@
     </section>
 </div>
 {% endblock section %}
+
+{% block scripts %}
+
+{% endblock scripts %}
