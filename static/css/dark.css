@@ -32,10 +32,6 @@
     color: rgb(255, 255, 255) !important;
 }
 
-.contrast span {
-    color: black;
-}
-
 
 /* .contrast button, 
 .contrast input[type=button],
@@ -65,6 +61,24 @@
     color: rgb(255, 255, 255) !important;
 }
 
+.contrast input[type=text]:focus,
+.contrast input[type=password]:focus,
+.contrast input[type=url]:focus,
+.contrast input[type=search]:focus,
+.contrast input[type=email]:focus,
+.contrast input[type=tel]:focus,
+.contrast input[type=date]:focus,
+.contrast input[type=month]:focus,
+.contrast input[type=week]:focus,
+.contrast input[type=datetime]:focus,
+.contrast input[type=datetime-local]:focus,
+.contrast textarea:focus,
+.contrast input[type=number]:focus {
+    border: black 2px solid;
+    outline: 0;
+    box-shadow: 0 0 8px 4px #ffff04e1;
+}
+
 .contrast img.on-contrast-force-gray {
     filter: grayscale(100%) contrast(120%);
 }
@@ -73,85 +87,69 @@
     filter: brightness(0) invert(1);
 }
 
-.contrast i, a, .dark-p,
-.contrast h3, .dark-text {
-    color: #000;
-}
-
-
 .contrast input[type=text] {
     color: white;
 }
 
 
-.nav-link {
+.contrast h3.login-title, .contrast i,
+a, .dark-p, .dark-text, .contrast span {
     color: #000;
 }
 
-.contrast .btn-dark-secondary {
+
+/* BOTÕES */
+
+.btn-dark-secondary {
     font-weight: bolder;
-    background-color: #5533ff;
+    background-color: #0019fc;
     border: #5533ff;
     color: white;
     box-shadow: 0px 1px 9px 2px rgba(80, 75, 75, 0.616);
 }
 
-.contrast .btn-dark-secondary:hover {
-    background-color: #06b8d8;
-    color: black;
-    box-shadow: 0px 1px 9px 2px rgba(80, 75, 75, 0.616);
+.btn-dark-secondary:hover {
+    box-shadow: 0px 1px 9px 2px rgba(128, 137, 146, 0.89);
 }
 
-.contrast .btn-dark-primary {
-    background-color: rgb(0, 0, 0);
+.btn-dark-primary {
+    background-color: #000000;
     border: #000;
     color: yellow;
 }
 
-.contrast .btn-dark-primary:hover {
-    background-color: #090979;
-    border: #000;
+.btn-dark-primary:hover {
+    box-shadow: 0px 0px 10px 3px rgb(255, 251, 0);
+    background-color: black;
     color: yellow;
+border:yellow 1px solid;
 }
 
-.contrast .btn-text-color {
-    color: yellow;
-}
 
 .contrast .hero-area .overlay {
     background: #000;
     height: 10%;
 }
 
-
-nav {
-    background: #3620A1;
-    background: linear-gradient(45deg, #3620A1 40%, #25ddf5 100%);
-}
-
 .contrast .b-section {
     background: #000;
 }
 
-.dropdown-menu {
-    background: #25ddf5;
-    background: linear-gradient(45deg, #25baf5 40%, #57e2f5 100%);
-}
 
-
-.rad:hover, .rad:focus,
+/* .rad:hover, .rad:focus,
 .contrast #toggleDark:hover {
     color: #1e2125;
     background-color: #06b8d8;
     border-radius: 50px;
-}
+} */
 
-.contrast .dark-font,
+.contrast .yellow-font, .contrast .btn-text-color,
 .contrast .i-home, .contrast .i-prev,
 .contrast .i-next, .contrast #services .services-item p,
 .contrast .hero-area .contents p,
-.contrast #services .services-item h4 {
-    color: rgb(255, 251, 9);
+.contrast #services .services-item h4, .contrast h1, 
+.contrast .hero-area .contents h2, .contrast h3, .contrast h4  {
+    color: yellow;
 }
 
 .contrast #services .services-item .icon i {
@@ -165,10 +163,6 @@ nav {
 
 .contrast #services .services-item p {
     font-size: 18px;
-}
-
-.contrast h1, .contrast .hero-area .contents h2, .contrast h3, .contrast h4 {
-    color: yellow;
 }
 
 /* FOCUS */

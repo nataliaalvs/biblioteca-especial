@@ -1,16 +1,6 @@
 {% extends 'base.html' %}
 
 {%block opcoes-navbar%}
-<!-- <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-        aria-expanded="false">Opções</a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item fw-bold" href="{% url 'addLivro' %}">Adicionar livro</a></li>
-        <li>
-            <hr class="dropdown-divider" />
-        </li>
-    </ul>
-</li> -->
 {% endblock opcoes-navbar%}
 
 {% block btn-login %}
@@ -63,12 +53,12 @@
                 </h6>
             </div>
         </div>
-        <!-- <div class="container"> -->
-        <div class="text-center mt-auto">
+        
+        <div class="container text-center mt-auto fixed">
 
             <button type="submit" class="btn fw-bold my-4 btn-text-color" aria-label="Ícone de seta para ir para a página seguinte" formaction="">
 
-                <i class="bi bi-arrow-left" style="font-size: 20px"></i>
+                <i class="bi bi-arrow-left" style="font-size: 20px">volta</i>
             </button>
 
             <button type="submit" class="btn fw-bold mx-sm-4 mx-md-4 mx-lg-5 btn-text-color" aria-label="Ícone para voltar ao início" formaction="{% url 'biblioteca' %}"><i class="bi bi-house"></i></button>

@@ -44,9 +44,9 @@
             <!-- navbar-fixed -->
             <div class="container px-4 px-lg-5">
                 {% if user.is_authenticated %}
-                    <a class="navbar-brand" href="{% url 'book.index' %}">Biblioteca Especial</a>
+                    <a class="navbar-brand" href="{% url 'book.index' %}" aria-label="Opção para voltar para sua biblioteca">Biblioteca Especial</a>
                 {% else %}
-                    <a class="navbar-brand" href="{% url 'home' %}">Biblioteca Especial</a>
+                    <a class="navbar-brand" href="{% url 'home' %}" aria-label="Opção para voltar para a tela inicial">Biblioteca Especial</a>
                 {% endif %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -55,7 +55,7 @@
                     <ul class="navbar-nav me-auto mb-lg-0 ms-lg-4">
                         {% if request.path == '/' %}
 
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#footer">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#footer" aria-label="Opção para seção sobre do site">Sobre</a></li>
                         {% endif %}                        
                     </ul>
     
@@ -63,33 +63,32 @@
                     <div class="d-flex justify-content-end col-12 col-sm-12 col-md-8 col-lg-2">
     
                         <li class="nav-item dropdown-item pe-2  pe-xs-5 pe-md-5 pe-lg-3 rad" style="cursor:pointer;"
-                            onclick="window.toggleContrast()" onkeypress="window.toggleContrast()">
+                            onclick="window.toggleContrast()" onkeypress="window.toggleContrast()" aria-label="Ícone para mudar para o modo alto contraste">
                             <i class="bi bi-circle-half" id="toggleDark" tabindex="0"></i>
                         </li>
-                        <li class="nav-item dropdown-item fw-bold px-3 rad" style="cursor:pointer;" tabindex="0">A+</li>
-                        <li class="nav-item dropdown-item fw-bold me-5 rad" style="cursor:pointer;" tabindex="0">A-</li>
+                        <li class="nav-item dropdown-item fw-bold px-3 rad" style="cursor:pointer;" tabindex="0" aria-label="ícone para aumentar o tamanho da fonte">A+</li>
+                        <li class="nav-item dropdown-item fw-bold me-5 rad" style="cursor:pointer;" tabindex="0" aria-label="ícone para diminuir o tamanho da fonte">A-</li>
                         </li>
                     </div>                   
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <!-- <i class="bi bi-person-fill me-1" style="font-size: 19px;"></i> -->
                             {{ request.user.name }}</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item fw-bold" href="{% url 'user.profile' %}">Meu perfil</a></li>
+                        <ul class="dropdown-menu drop-profile" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item drop-profile fw-bold" href="{% url 'user.profile' %}" aria-label="Opção para ver seu perfil">Meu perfil</a></li>
                             <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item fw-bold" href="{% url 'auth.logout' %}">Sair</a></li>
+                            <li><a class="dropdown-item drop-profile fw-bold" href="{% url 'auth.logout' %}" aria-label="Opção para sair da sua conta">Sair</a></li>
                         </ul>
                     </li>
                     {% else %}
                         <div class="d-flex justify-content-end me-2">
                             <li class="nav-item dropdown-item pe-2  pe-xs-5 pe-md-5 pe-lg-3 rad" style="cursor:pointer;"
-                                onclick="window.toggleContrast()" onkeypress="window.toggleContrast()">
+                                onclick="window.toggleContrast()" onkeypress="window.toggleContrast()" aria-label="Ícone para mudar para o modo alto contraste">
                                 <i class="bi bi-circle-half" id="toggleDark" tabindex="0"></i>
                             </li>
                         </div>
                         <form class="d-flex my-3" action="{% url 'auth.login' %}">
-                            <button class="btn btn-terciary btn-block btn-dark-terciary fw-bold " type="submit">
-                            <!-- <i class="bi bi-person-fill" style="font-size: 19px"></i> -->
+                            <button class="btn btn-terciary btn-block btn-dark-terciary fw-bold " type="submit" aria-label="Botão para entrar na sua conta">
                                 Entrar
                             </button>
                         </form>
@@ -106,8 +105,18 @@
         </div>
         {% block footer %}
             <!-- Footer-->
-            <footer class="py-5">
-                <div class="container"><p class="m-0 text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p></div>
+            <footer>
+                <div class="copyright">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="site-info text-center">
+                            <p class="text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </footer>
         {% endblock footer %}
         <!-- Bootstrap core JS-->
