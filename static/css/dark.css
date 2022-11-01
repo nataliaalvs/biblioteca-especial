@@ -33,7 +33,7 @@
 }
 
 .contrast span { 
-    color: black;
+    color: black !important;
 }
 
 
@@ -125,7 +125,7 @@
 
  nav{
     background: #5533ff;
-  background: linear-gradient(45deg, #5533ff 40%, #25ddf5 100%);
+    background: linear-gradient(45deg, #5533ff 40%, #25ddf5 100%);
 }
 
 .contrast .b-section {
@@ -134,7 +134,7 @@
 
 .dropdown-menu {
     background: #25ddf5;
-  background: linear-gradient(45deg, #25baf5 40%, #57e2f5 100%);
+    background: linear-gradient(45deg, #25baf5 40%, #57e2f5 100%);
 }
 
 
@@ -172,6 +172,6 @@
   }
 
   .contrast .dark-white {
-    color: white;
+    color: white !important;
   }
 

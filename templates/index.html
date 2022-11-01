@@ -1,7 +1,8 @@
 {% extends './layouts/base.html' %}
 {% load static %}
+{% block styles %}
+{% endblock styles %}
 {% block header %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <header id="home" class="hero-area">
   <div class="overlay">
     <span></span>
@@ -11,8 +12,8 @@
     <div class="row space-100">
       <div class="col-lg-6 col-md-12 col-xs-12">
         <div class="contents">
-          <h2 class="head-title">A ferramenta que é sua aliada!</h2>
-          <p>Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
+          <h2 class="head-title font-sizing">A ferramenta que é sua aliada!</h2>
+          <p class="font-sizing">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
           <div class="header-button">
             <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold" tabindex="0" aria-label="Entrar no sistema">Entrar</a>
             <a href="#services" class="btn btn-border fw-bold" tabindex="0" aria-label="Mais informações">Mais informações</a>
@@ -21,7 +22,7 @@
       </div>
       <div class="col-lg-6 col-md-12 col-xs-12 p-0">
         <div class="intro-img">
-          <img src="{% static 'images/reading-phone.png' %}" alt="">
+          <img src="{% static 'images/reading-phone.png' %}" alt="Imagem de uma mulher com um celular">
         </div>
       </div>
     </div>
@@ -34,17 +35,17 @@
 <section id="services" class="section">
   <div class="container fw-bolder">
 
-    <div class="row">
+    <div class="row font-sizing">
       <!-- Start Col -->
       <!-- <div class="col-lg-4 col-md-6 col-xs-12"> -->
       <div class="col-12 col-md-12 col-lg-4 col-sm-12">
 
-        <div class="services-item text-center">
+        <div class="services-item text-center dark-white">
           <div class="icon">
-            <i class="bi bi-toggles"></i>
+            <i class="bi bi-book-half"></i>
           </div>
-          <h4>Qualidade 1</h4>
-          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+          <h4 tabindex="0">Leitor Inteligente</h4>
+          <p tabindex="0" class="dark-white">Nosso sistema aceita qualquer tipo de PDF, o qual será lido e interpretado como texto em português.</p>
         </div>
       </div>
       <!-- End Col -->
@@ -52,10 +53,10 @@
       <div class="col-12 col-md-12 col-lg-4 col-sm-12">
         <div class="services-item text-center">
           <div class="icon">
-            <i class="lni-brush"></i>
+            <i class="bi bi-universal-access"></i>
           </div>
-          <h4>Slick Design</h4>
-          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+          <h4 tabindex="0">Acessibilidade</h4>          
+          <p tabindex="0" class="dark-white">O nosso objetivo é trazer a possibilidade de leitura para todos os tipos de leitores. Tornando os livros acessíveis para todos.</p>
         </div>
       </div>
       <!-- End Col -->
@@ -63,10 +64,10 @@
       <div class="col-12 col-md-12 col-lg-4 col-sm-12">
         <div class="services-item text-center">
           <div class="icon">
-            <i class="fa-solid fa-text-size"></i>
+            <i class="bi bi-server"></i>
           </div>
-          <h4>Crafted with Love</h4>
-          <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+          <h4 tabindex="0">Documentos Salvos</h4>
+          <p tabindex="0" class="dark-white">No Biblioteca Especial seus livros guardadinhos aqui, sem precisar reenviá-los sempre que quiser ler novamente.</p>
         </div>
       </div>
       <!-- End Col -->

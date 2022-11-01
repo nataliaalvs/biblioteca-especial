@@ -70,15 +70,16 @@ def dark(request):
 
 def font_plus(request):
     user = MyUser.objects.get(pk=request.user.id)
-    user.font_size = user.font_size + 1
-    user.save()
+    if user.font_size < 38:
+        user.font_size = user.font_size + 2
+        user.save()
     next = request.POST.get('next', '/')    
     return redirect(next)
 
 def font_less(request):
     user = MyUser.objects.get(pk=request.user.id)
-    user.font_size = user.font_size - 1
-    user.save()
-    next = request.POST.get('next', '/')
-    
+    if user.font_size > 15:
+        user.font_size = user.font_size - 2
+        user.save()
+    next = request.POST.get('next', '/')    
     return redirect(next)
