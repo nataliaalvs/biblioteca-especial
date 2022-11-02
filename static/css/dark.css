@@ -105,11 +105,15 @@ a, .dark-p, .dark-text, .contrast span {
     background-color: #0019fc;
     border: #5533ff;
     color: white;
-    box-shadow: 0px 1px 9px 2px rgba(80, 75, 75, 0.616);
+    /* box-shadow: 0px 1px 9px 2px rgba(126, 113, 113, 0.616); */
 }
 
 .btn-dark-secondary:hover {
-    box-shadow: 0px 1px 9px 2px rgba(128, 137, 146, 0.89);
+    box-shadow: 0px 1px 9px 2px rgba(82, 165, 248, 0.89);
+    /* box-shadow: 0px 1px 9px 2px yellow; */
+    transform: translateY(-2px);
+
+
 }
 
 .btn-dark-primary {
@@ -197,4 +201,8 @@ border:yellow 1px solid;
     border: yellow 3px solid;
     outline: 0;
     box-shadow: 0 0 15px 2px rgb(0, 0, 0);
+  }
+
+  .contrast .modal-content {
+    background-color: rgb(9, 9, 97);
   }

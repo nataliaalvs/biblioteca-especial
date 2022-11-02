@@ -42,7 +42,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fw-bolder" id="home">
             <!-- navbar-fixed -->
-            <div class="container px-4 px-lg-5">
+            <div class="container">
                 {% if user.is_authenticated %}
                     <a class="navbar-brand" href="{% url 'book.index' %}" aria-label="Opção para voltar para sua biblioteca">Biblioteca Especial</a>
                 {% else %}
@@ -88,7 +88,7 @@
                             </li>
                         </div>
                         <form class="d-flex my-3" action="{% url 'auth.login' %}">
-                            <button class="btn btn-terciary btn-block btn-dark-terciary fw-bold " type="submit" aria-label="Botão para entrar na sua conta">
+                            <button class="btn btn-terciary btn-block fw-bold " type="submit" aria-label="Botão para entrar na sua conta">
                                 Entrar
                             </button>
                         </form>
@@ -106,7 +106,7 @@
         {% block footer %}
             <!-- Footer-->
             <footer>
-                <div class="copyright">
+                <div class="copyright footer">
                     <div class="container">
                       <div class="row">
                         <div class="col-12">
