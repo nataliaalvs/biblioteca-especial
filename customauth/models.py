@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
@@ -30,7 +31,7 @@ class MyUser(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
-    font_size = models.FloatField(default=13, validators=[MinValueValidator(0)])
+    font_size = models.FloatField(default=1, validators=[MinValueValidator(0)])
     contrast = models.BooleanField(default=False)
     dyslexic = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -41,3 +42,6 @@ class MyUser(AbstractBaseUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', 'theme']
+    class Meta:
+        verbose_name = _('usuário')
+        verbose_name_plural = _('usuários')

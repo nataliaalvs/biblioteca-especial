@@ -5,26 +5,22 @@
   <h2 class="fw-bolder">Dados pessoais</h2>
 </div>
 
-<form class="col-md-6 offset-md-3 my-3 fw-bolder">
-
-  <div class="form-outline mb-2">
-    <label class="form-label" for="id_name">Nome</label>
-    <input type="text" id="id_name" name="name" class="form-control" value="Seu nome" />
-  </div>
-
-  <div class="form-outline mb-2">
-    <label class="form-label" for="id_email">Email</label>
-    <input type="email" id="id_email" name="email" class="form-control" value="nome@algo.com" />
-  </div>
-
-  <div class="form-outline mb-2">
-    <label class="form-label" for="form3Example2">Senha</label>
-    <input type="password" id="password" class="form-control" value="estAeaSenha!@" />
-  </div>
-
+<form class="col-md-6 offset-md-3 my-3 fw-bolder"  method="POST">
+  {% csrf_token %}
+  {% if form.errors %}
+    <div class="alert alert-danger" autofocus="true" tabindex="0">
+        {{ form.errors }}
+    </div>
+  {% endif %}
+  {% for field in form %}
+    <div class="form-outline mb-2">
+      <label class="form-label" for="{{ field.auto_id }}">{{ field.label }}</label>
+      {{ field }}
+    </div>
+  {% endfor %}
   <div class="container py-4">
     <div class="text-center">
-      <button type="button" class="btn btn-outline-dark mt-auto fw-bold btn-dark-secondary">Salvar</button>
+      <button class="btn btn-outline-dark mt-auto fw-bold btn-dark-secondary" type="submit">Salvar</button>
     </div>
   </div>
 </form>

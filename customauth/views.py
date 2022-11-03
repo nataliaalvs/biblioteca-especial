@@ -36,7 +36,7 @@ def login(request):
     else:
         form = AuthenticationForm(request.POST or None)        
         if request.method == 'POST':
-            print('é post')
+            print(form.is_valid())
             email = request.POST['email']
             password = request.POST['password']
             user = authenticate(username=email, password=password)            

@@ -20,30 +20,17 @@
             <form method="post">
               {% csrf_token %}
 
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text" for="id_name">Nome</label>
-                <input type="text" id="id_name" name="name" class="form-control" />
+              {% if form.errors %}
+              <div class="alert alert-danger text-start">
+                  {{ form.errors }}
               </div>
-
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text" for="id_theme">Tema</label>
-                <input type="number" name="theme" id="id_theme" class="form-control form-control-lg" maxlength="255" required autofocus="true" />
-              </div>
-
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text" for="id_email">Email</label>
-                <input type="email" name="email" id="id_email" class="form-control form-control-lg" maxlength="255" required autofocus="true" />
-              </div>
-
-              <div class="form-outline mb-3 text-start">
-                <label class="form-label dark-text" for="id_password">Senha</label>
-                <input type="password" name="password1" id="id_password1" class="form-control form-control-lg" required/>
-              </div>
-
-              <div class="form-outline mb-3 text-start">
-                <label class="form-label dark-text" for="id_password">Confirme sua senha</label>
-                <input type="password" name="password2" id="id_password2" class="form-control form-control-lg" required />
-              </div>
+              {% endif %}
+              {% for field in form %}
+                <div class="form-outline mb-2 text-start">
+                  <label class="form-label dark-text" for="{{ field.auto_id }}">{{ field.label }}</label>
+                  {{ field }}
+                </div>
+              {% endfor %}
 
               
               <button class="btn btn-terciary btn-lg btn-block btn-dark-primary fw-bold mt-2" type="submit">Cadastrar</button>

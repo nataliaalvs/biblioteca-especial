@@ -19,17 +19,18 @@
 
             <form method="post">
               {% csrf_token %}
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text" for="id_email">Email</label>
-                <input type="email" name="email" id="id_email" class="form-control form-control-lg" maxlength="255" required autofocus="true" />
-              </div>
-
-              <div class="form-outline mb-3 text-start">
-                <label class="form-label dark-text" for="id_password">Senha</label>
-                <input type="password" name="password" id="id_password" class="form-control form-control-lg" autocomplete="current-password" required/>
-              </div>
-
-              <button class="btn btn-terciary btn-lg btn-block btn-dark-terciary fw-bold my-2" type="submit">Entrar</button>
+              {% if form.errors %}
+                <div class="alert alert-danger">
+                    {{ form.errors }}
+                </div>
+              {% endif %}
+              {% for field in form %}
+                <div class="form-outline mb-2 text-start">
+                  <label class="form-label dark-text" for="{{ field.auto_id }}">{{ field.label }}</label>
+                  {{ field }}
+                </div>
+              {% endfor %}
+              <button class="btn btn-terciary btn-lg btn-block btn-dark-terciary fw-bold mb-2 mt-3" type="submit">Entrar</button>
               <div>
                 <p class="dark-p">Não tem uma conta? <a class="fw-bolder" href="{% url 'auth.register' %}">Criar nova conta</a>
                 </p>
