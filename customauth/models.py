@@ -30,8 +30,9 @@ class MyUser(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
-    font_size = models.SmallIntegerField(default=13, validators=[MinValueValidator(0), MaxValueValidator(100)])
-    theme = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    font_size = models.FloatField(default=13, validators=[MinValueValidator(0)])
+    contrast = models.BooleanField(default=False)
+    dyslexic = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     
     date_joined = models.DateTimeField(default=timezone.now)
