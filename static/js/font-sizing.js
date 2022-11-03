@@ -1,8 +1,18 @@
+document.body.onload = () => {
+    if (localStorage.getItem('fontSize') != undefined || localStorage.getItem('fontSize') != null ||  localStorage.getItem('fontSize') < 7){
+        window.changeFontSize('none');
+    } 
+}
+
 ('keypress', function () {
+    var minSize = 0.5;
+    var maxSize = 1.7;
+    var defaultSize = 1;
+    var paramSizing = 0.1;
     console.log('vamos mudar essa font')
     var FontSize = {
         storage: 'fontSize',
-        currentSize: 13,
+        currentSize: null,
         check: checkFontSize,
         get: getFontSize,
         set: setFontSize,
@@ -23,27 +33,90 @@
     }
 
     function setFontSize(size) {
-        localStorage.setItem(this.storage, String(size));
+        localStorage.setItem(this.storage, String(size.toFixed(2)));
         this.currentSize = size;
-        this.updateView();
+        
+        this.updateView();        
     }
 
     function updateViewFontSize() {
+        
         var body = document.body;
-        var elSizing = body.querySelectorAll('.font-sizing')        
+        var elSizing = body.querySelectorAll('.font-sizing');
+        elSizing = removeDuplicates(elSizing);
         for (let i = 0; i < elSizing.length; i++) {
-            const el = elSizing[i];            
-            el.style.fontSize = String(this.currentSize) + 'px';
-        }
+            const el = elSizing[i];
+            // Geral settings
+            el.style.wordWrap = 'break-word';
+            if(el.nodeName === 'H1' || el.nodeName === 'H2' || el.nodeName === 'H3' || el.nodeName === 'H4' || el.nodeName === 'H5' || el.nodeName === 'H6') {
+                switch (el.nodeName) {
+                    case 'H2':
+                        el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
+                        el.style.setProperty( 'line-height', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
+                        break;
+
+                    case 'H2':
+                        el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
+                        el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
+                        break;
+
+                    case 'H2':
+                            el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
+                            el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
+                            break;
+
+                    case 'H4':
+                        el.style.setProperty( 'font-size', 'calc(calc(1rem + 0.3vw) + '+String(this.get() * 100) + '%)', 'important' );
+                        el.style.setProperty( 'line-height', 'calc(1.2rem + '+String(this.get() * 40) + '%)', 'important' );
+                        break;
+
+                    case 'H2':
+                        el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
+                        el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
+                        break;
+                
+                    default:
+                        break;
+                }
+                
+                
+            } else {                
+                el.style.setProperty( 'font-size', 'calc(1rem + '+String(this.get() * 50) + '%)', 'important' );
+                el.style.setProperty( 'line-height', 'calc(1rem + '+String(this.get() * 40) + '%)', 'important' );
+            }
+        }        
+        
     }
 
     function changingFontSize(type) {
-        console.log(type)
-        if(type === 'plus')
-            this.currentSize = this.currentSize + 1;
-        else if(type === 'less')
-            this.currentSize = this.currentSize - 1;
+        console.log(this.get())
+        if (this.get() == null || this.get() < minSize){
+            this.currentSize = defaultSize;
+            this.set(defaultSize)
+        } else {
+            this.currentSize = this.get();            
+        }
+
+        if(type === 'plus'){
+            if (this.get() < maxSize) 
+                this.set(this.currentSize + paramSizing)
+        }else if(type === 'less'){
+            if (this.get() > minSize) 
+                this.set(this.currentSize - paramSizing)
+    
+        }
         
-        this.set(this.currentSize)
+        
+        
+    }
+    function removeDuplicates(arr) {
+        var unique = [];
+        arr.forEach(element => {
+            if (!unique.includes(element)) {
+                unique.push(element);
+            }
+        });
+        return unique;
     }
 })();
+

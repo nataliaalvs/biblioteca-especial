@@ -8,15 +8,15 @@
     <span></span>
     <span></span>
   </div>
-  <div class="container">
+  <div class="container pb-5">
     <div class="row space-100">
       <div class="col-lg-6 col-md-12 col-xs-12">
         <div class="contents">
-          <h2 class="head-title font-sizing">A ferramenta que é sua aliada!</h2>
-          <p class="font-sizing">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
+          <h2 class="head-title">A ferramenta que é sua aliada!</h2>
+          <p class="">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
           <div class="header-button">
-            <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold" tabindex="0" aria-label="Entrar no sistema">Entrar</a>
-            <a href="#services" class="btn btn-border fw-bold" tabindex="0" aria-label="Mais informações">Mais informações</a>
+            <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold h-100 p-2" tabindex="0" aria-label="Entrar no sistema">Entrar</a>
+            <a href="#services" class="btn btn-border fw-bold h-100 p-2" tabindex="0" aria-label="Mais informações">Mais informações</a>
           </div>
         </div>
       </div>
@@ -32,42 +32,41 @@
 {% endblock header%}
 
 {% block section %}
-<section id="services" class="section">
+<section id="services" class="section my-5">
   <div class="container fw-bolder">
 
-    <div class="row font-sizing">
+    <div class="row">
       <!-- Start Col -->
-      <!-- <div class="col-lg-4 col-md-6 col-xs-12"> -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12 m-0">
 
-        <div class="services-item text-center dark-white">
+        <div class="services-item text-center h-100 m-0">
           <div class="icon">
             <i class="bi bi-book-half"></i>
           </div>
-          <h4 tabindex="0">Leitor Inteligente</h4>
-          <p tabindex="0" class="dark-white">Nosso sistema aceita qualquer tipo de PDF, o qual será lido e interpretado como texto em português.</p>
+          <h4 tabindex="0"  class="font-sizing">Leitor Inteligente</h4>
+          <p tabindex="0" class="dark-white font-sizing">Nosso sistema aceita qualquer tipo de PDF, o qual será lido e interpretado como texto em português pronto para sua leitura.</p>
         </div>
       </div>
       <!-- End Col -->
       <!-- Start Col -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
-        <div class="services-item text-center">
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12 m-0">
+        <div class="services-item text-center h-100 m-0">
           <div class="icon">
             <i class="bi bi-universal-access"></i>
           </div>
-          <h4 tabindex="0">Acessibilidade</h4>          
-          <p tabindex="0" class="dark-white">O nosso objetivo é trazer a possibilidade de leitura para todos os tipos de leitores. Tornando os livros acessíveis para todos.</p>
+          <h4 tabindex="0" class="font-sizing">Acessibilidade</h4>          
+          <p tabindex="0" class="dark-white font-sizing">O nosso objetivo é trazer a possibilidade de leitura para todos os tipos de leitores. Tornando os livros acessíveis para todos.</p>
         </div>
       </div>
       <!-- End Col -->
       <!-- Start Col -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
-        <div class="services-item text-center">
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12 m-0">
+        <div class="services-item text-center h-100 m-0">
           <div class="icon">
             <i class="bi bi-server"></i>
           </div>
-          <h4 tabindex="0">Documentos Salvos</h4>
-          <p tabindex="0" class="dark-white">No Biblioteca Especial seus livros guardadinhos aqui, sem precisar reenviá-los sempre que quiser ler novamente.</p>
+          <h4 tabindex="0" class="font-sizing">Documentos Salvos</h4>
+          <p tabindex="0" class="dark-white font-sizing">No Biblioteca Especial seus livros guardadinhos aqui, sem precisar reenviá-los sempre que quiser ler novamente.</p>
         </div>
       </div>
       <!-- End Col -->
