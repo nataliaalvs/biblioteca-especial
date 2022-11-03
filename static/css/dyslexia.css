@@ -5,11 +5,12 @@
 
 .dyslexia {
     font-family: OpenDyslexic !important;       
-    letter-spacing: .5rem;
+    letter-spacing: .05rem !important;
+    word-spacing: .3rem !important;
 }
 
 .dyslexia p, .dyslexia h1, .dyslexia h2, .dyslexia h3, .dyslexia h4, .dyslexia h5, .dyslexia h6, .dyslexia a, .dyslexia button {    
     font-family: OpenDyslexic !important;
-    letter-spacing: .5rem;
+    letter-spacing: .1rem !important;
 
 }

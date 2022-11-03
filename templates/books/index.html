@@ -20,27 +20,27 @@
         <div class="px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {% for book in books %}
-                <div class="col-12 mb-5">
-                    <div class="card h-100 card-color col-md-12 col-sm-12 col-12 card-shadow" style="background-color: white; filter: grayscale(25%);">                        
+                <div class="col-12 mb-5 ">
+                    <div class="card h-100 card-color col-md-12 col-sm-12 col-12 card-shadow d-flex flex-column justify-space-between" style="background-color: white; filter: grayscale(25%);">                        
                         <div class="card-body p-4" style="background: inherit;">
                             <div class="text-center" style="background: inherit;">
-                                <h5 role="textbox" class="fw-bolder col-12" tabindex="0" style="background: inherit;
-                                -webkit-background-clip: text;
-                                        background-clip: text;
-                                color: transparent;
-                                filter: invert(1) grayscale(25%) drop-shadow(.07em .07em .05em black);">{{ book.title }}</h5>
+                                <h5 role="textbox" class="fw-bolder text-center font-sizing" tabindex="0" style="background: inherit;
+                                    -webkit-background-clip: text;
+                                            background-clip: text;
+                                    color: transparent !important;
+                                    filter: invert(1) grayscale(50%) drop-shadow(.07em .07em .07em black);;">{{ book.title }}</h5>
                             </div>
                         </div>
                         <div class="card-footer p-2 pt-0 border-top-0 text-center" style="background: inherit;">                            
                             <div class="d-flex  justify-content-around align-items-center" style="background: inherit;">
-                                <a id="btnRead" class="btn btn-dark  fw-bold btn-dark-primary"
+                                <a id="btnRead" class="btn btn-dark fw-bold btn-dark-primary font-sizing"
                                     href="{% url 'book.show' book.id book.current_page %}" type="submit" aria-label="Ler {{ book.title }}">Ler livro</a>
                                 <div style="background: inherit;">
-                                    <a href="{% url 'book.delete' book.pk %}" style="background: inherit;
-                                    -webkit-background-clip: text;
-                                            background-clip: text;
-                                    color: transparent;
-                                    filter: invert(1) grayscale(50%) drop-shadow(.07em .07em .07em black);"><i class="bi bi-trash font-sizing" aria-label="Deletar {{ book.title }}" ></i></a>
+                                    <a class="font-sizing" href="{% url 'book.delete' book.pk %}" style="background: inherit;" ><i class="bi bi-trash" style="background: inherit;
+                                        -webkit-background-clip: text;
+                                                background-clip: text;
+                                        color: transparent !important;
+                                        filter: invert(1) grayscale(50%) drop-shadow(.07em .07em .07em black);" aria-label="Deletar {{ book.title }}" ></i></a>
                                 </div>
                             </div>
                         </div>

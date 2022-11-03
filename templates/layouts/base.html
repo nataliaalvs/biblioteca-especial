@@ -45,9 +45,8 @@
             <style>
                 .font-sizing{
                     font-size: calc(1rem + {{ request.user.font_size |mul:50 }}%) !important;
-                    line-height: calc(1rem + {{ request.user.font_size |mul:40 }}%) !important;
+                    line-height: calc(1rem + {{ request.user.font_size |mul:101 }}%) !important;
                     word-wrap: break-word;
-
                 }
                 
             </style>
@@ -87,8 +86,8 @@
                             <i class="bi bi-fonts" id="toggleDark" tabindex="0" aria-label="Modo disléxico"  title="Modo disléxico"></i>
                         </li>     
                         <li>
-                            <li class="nav-item fw-bold py-1 px-3 rad" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_plus').submit()" onkeypress="document.querySelector('#form_font_plus').submit()" value="{{ request.user.font_size }}">A+</li>
-                            <li class="nav-item fw-bold py-1 px-3 me-5 rad" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_less').submit()" onkeypress="document.querySelector('#form_font_less').submit()" value="{{ request.user.font_size }}">A-</li>
+                            <li class="nav-item fw-bold py-1 px-3 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_plus').submit()" onkeypress="document.querySelector('#form_font_plus').submit()" value="{{ request.user.font_size }}">A+</li>
+                            <li class="nav-item fw-bold py-1 px-3 me-5 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_less').submit()" onkeypress="document.querySelector('#form_font_less').submit()" value="{{ request.user.font_size }}">A-</li>
                         </li>
                         <form method="POST" id="contrast" action="{% url 'contrast' %}">
                             {% csrf_token %}
