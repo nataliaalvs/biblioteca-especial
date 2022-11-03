@@ -2,25 +2,28 @@
 {% block styles %}
 <style>
     .section-read {
+        white-space: pre;
+        line-height: 1.8;
         white-space: pre-wrap;
     }
 </style>
 {% endblock %}
 {% block section %}
 
-<div class="container font-sizing">
-    <div class="text-center m-4">
-        <h2 class="fw-bolder" aria-label="{{ book.title }}">{{ book.title }}</h2>
+
+<div class="container">
+    <div class="text-center m-4 yellow-font">
+        <h2 class="fw-bolder font-sizing" aria-label="{{ book.title }}">{{ book.title }}</h2>
     </div>
 
-    <form class="mx-2 mt-5">
+    <div class="mx-2 mt-5 yellow-font">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="section-read" tabindex="0">
+                <div class="section-read font-sizing" tabindex="0">
                     {{ content_book | safe }}
                 </div>
-                <h6>
-                    <label for="page" class="col-sm-10 col-form-label" aria-label="Página {{ book.current_page }}"  tabindex="0">Página {{ book.current_page }}</label>
+                <h6 class="font-sizing">
+                    <label for="page" class="col-sm-10 col-form-label yellow-font" aria-label="Página {{ book.current_page }}"  tabindex="0">Página {{ book.current_page }}</label>
                 </h6>
             </div>
         </div>
@@ -40,6 +43,6 @@
         </div>
         <!-- </div> -->
 
-    </form>
+    </div>
 </div>
 {% endblock section %}

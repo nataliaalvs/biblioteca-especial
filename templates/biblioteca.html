@@ -1,31 +1,19 @@
 {% extends 'base.html' %}
-
 {%load static%}
 {% block opcoes-navbar %} {% endblock %}
 
 {% block btn-login %}
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle px-0 mx-0 py-1" id="navbarDropdown" href="#" role="button"
-        data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill" style="font-size:25px ;"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item fw-bold" href="{% url 'perfil' %}">Meu perfil</a></li>
-        <li>
-            <hr class="dropdown-divider" />
-        </li>
-        <li><a class="dropdown-item fw-bold" href="#!">Sair</a></li>
-    </ul>
-</li>
 {% endblock btn-login %}
 
 {% block section %}
 <div class="container">
     <section class="dark-section">
-        <h3 class="title dark-white">Meus livros</h3>
+        <h3 class="title" aria-label="Seção de livros">Meus livros</h3>
         <div class="d-flex flex-row-reverse bd-highlight mx-5 px-lg-8">
             <form action="{% url 'addLivro' %}">
                 <!-- <i class="bi bi-plus-circle d-block d-sm-block d-md-none" style="font-size:32px"></i> -->
                 </span>
-                <button class="btn btn-primary btn-terciary px-lg-8 fw-bold" type="submit" style="border-radius: 50px;">
+                <button class="btn btn-terciary px-lg-8 fw-bold" type="submit" style="border-radius: 50px;" aria-label="Botão para adicionar livro">
                     Adicionar livro
                 </button>
             </form>

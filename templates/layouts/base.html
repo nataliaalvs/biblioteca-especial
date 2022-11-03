@@ -59,10 +59,10 @@
             <!-- navbar-fixed -->
             <div class="container px-4 px-lg-5">
                 {% if user.is_authenticated %}                
-                    <a class="navbar-brand dark-white font-sizing" href="{% url 'book.index' %}">Biblioteca Especial</a>
+                    <a class="navbar-brand dark-white font-sizing" href="{% url 'book.index' %}" aria-label="Opção para voltar para sua biblioteca">Biblioteca Especial</a>
                     {{ request.user.font_size }}
                 {% else %}
-                    <a class="navbar-brand dark-white font-sizing" href="{% url 'home' %}">Biblioteca Especial</a>
+                    <a class="navbar-brand dark-white font-sizing" href="{% url 'home' %}" aria-label="Opção para voltar para a tela inicial">Biblioteca Especial</a>
                 {% endif %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -70,8 +70,7 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-lg-0 ms-lg-4">
                         {% if request.path == '/' %}
-
-                            <li class="nav-item"><a class="nav-link active dark-white font-sizing" aria-current="page" href="#footer">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link active dark-white font-sizing" aria-current="page" href="#footer" aria-label="Opção para seção sobre do site">Sobre</a></li>
                         {% endif %}                        
                     </ul>
     
@@ -79,15 +78,15 @@
                     <div class="d-flex justify-content-end col-12 col-sm-12 col-md-8 col-lg-2">                                                
                         <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad" style="cursor:pointer;"
                         onclick="document.querySelector('#contrast').submit()" onkeypress="document.querySelector('#contrast').submit()">
-                            <i class="bi bi-circle-half font-sizing" id="toggleDark" tabindex="0" aria-label="Modo autocontraste" title="Modo autocontraste"></i>
+                            <i class="bi bi-circle-half font-sizing" id="toggleDark" tabindex="0" aria-label="Ícone para mudar para o modo alto contraste" title="Modo alto contraste"></i>
                         </li>   
                         <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad font-sizing" style="cursor:pointer;"
                             onclick="document.querySelector('#dyslexic').submit()" onkeypress="document.querySelector('#dyslexic').submit()">
-                            <i class="bi bi-fonts" id="toggleDark" tabindex="0" aria-label="Modo disléxico"  title="Modo disléxico"></i>
+                            <i class="bi bi-fonts" id="toggleDark" tabindex="0" aria-label="Ícone para mudar para o modo disléxico" title="Modo disléxico"></i>
                         </li>     
                         <li>
-                            <li class="nav-item fw-bold py-1 px-3 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_plus').submit()" onkeypress="document.querySelector('#form_font_plus').submit()" value="{{ request.user.font_size }}">A+</li>
-                            <li class="nav-item fw-bold py-1 px-3 me-5 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_less').submit()" onkeypress="document.querySelector('#form_font_less').submit()" value="{{ request.user.font_size }}">A-</li>
+                            <li class="nav-item fw-bold py-1 px-3 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_plus').submit()" onkeypress="document.querySelector('#form_font_plus').submit()" value="{{ request.user.font_size }}" aria-label="ícone para aumentar o tamanho da fonte">A+</li>
+                            <li class="nav-item fw-bold py-1 px-3 me-5 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_less').submit()" onkeypress="document.querySelector('#form_font_less').submit()" value="{{ request.user.font_size }}" aria-label="ícone para diminuir o tamanho da fonte">A-</li>
                         </li>
                         <form method="POST" id="contrast" action="{% url 'contrast' %}">
                             {% csrf_token %}
@@ -111,29 +110,30 @@
                         <a class="nav-link dropdown-toggle font-sizing" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ request.user.name }}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'user.profile' %}">Meu perfil</a></li>
+                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'user.profile' %}" aria-label="Opção para ver seu perfil">Meu perfil</a></li>
                             <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'auth.logout' %}">Sair</a></li>
+                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'auth.logout' %}" aria-label="Opção para sair da sua conta">Sair</a></li>
                         </ul>
                     </li>                    
                     {% else %}
                         <div class="d-flex justify-content-end col-12 col-sm-12 col-md-8 col-lg-2">                        
                             <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad font-sizing" style="cursor:pointer;"
-                                onclick="window.toggleContrast()" onkeypress="window.toggleContrast()">
-                                <i class="bi bi-circle-half" id="toggleDark" tabindex="0" aria-label="Modo autocontraste"></i>
+                                onclick="window.toggleContrast()" onkeypress="window.toggleContrast()" title="Modo alto contraste">
+                                <i class="bi bi-circle-half" id="toggleDark" tabindex="0"  aria-label="Ícone para mudar para o modo alto contraste"></i>
                             </li>   
                             <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad font-sizing" style="cursor:pointer;"
                                 onclick="window.toggleDyslexia()" onkeypress="window.toggleDyslexia()" title="Modo disléxico">
-                                <i class="bi bi-fonts" id="toggleDark" tabindex="0" aria-label="Modo disléxico"></i>
+                                <i class="bi bi-fonts" id="toggleDark" tabindex="0" aria-label="Ícone para mudar para o modo disléxico"></i>
                             </li>     
                             <li>
-                                <li class="nav-item fw-bold py-1 px-3 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="window.changeFontSize('plus')" onkeypress="window.changeFontSize('plus')">A+</li>
-                                <li class="nav-item fw-bold py-1 px-3 me-5 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="window.changeFontSize('less')" onkeypress="window.changeFontSize('less')">A-</li>
+                                <li class="nav-item fw-bold py-1 px-3 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="window.changeFontSize('plus')" onkeypress="window.changeFontSize('plus')" aria-label="ícone para aumentar o tamanho da fonte">A+</li>
+                                <li class="nav-item fw-bold py-1 px-3 me-5 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="window.changeFontSize('less')" onkeypress="window.changeFontSize('less')" aria-label="ícone para diminuir o tamanho da fonte">A-</li>
                             </li>                            
     
                         </div>                   
                         <form class="d-flex my-3" action="{% url 'auth.login' %}">
-                            <button class="btn btn-terciary btn-block btn-dark-terciary fw-bold " type="submit">
+                            <button class="btn btn-terciary btn-block btn-dark-terciary fw-bold" type="submit" aria-label="Botão para entrar na sua conta">
+
                                 Entrar
                             </button>
                         </form>
@@ -151,8 +151,18 @@
         </div>
         {% block footer %}
             <!-- Footer-->
-            <footer class="py-5">
-                <div class="container"><p class="m-0 text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p></div>
+            <footer>
+                <div class="copyright footer">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="site-info text-center">
+                            <p class="text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </footer>
         {% endblock footer %}
         <!-- Bootstrap core JS-->
