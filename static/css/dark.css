@@ -32,7 +32,6 @@
     color: rgb(255, 255, 255) !important;
 }
 
-
 /* .contrast button, 
 .contrast input[type=button],
 .contrast input[type=reset],
@@ -140,6 +139,7 @@ border:yellow 1px solid;
 }
 
 
+
 /* .rad:hover, .rad:focus,
 .contrast #toggleDark:hover {
     color: #1e2125;
@@ -197,12 +197,13 @@ border:yellow 1px solid;
     box-shadow: 0 0 5px 1px white;
 }
 
+
 .contrast #services .services-item:focus {
     border: yellow 3px solid;
     outline: 0;
     box-shadow: 0 0 15px 2px rgb(0, 0, 0);
-  }
+}
 
-  .contrast .modal-content {
+.contrast .modal-content {
     background-color: rgb(9, 9, 97);
-  }
+}

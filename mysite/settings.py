@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-^1j0rkpafp%^62k)@h*#y956%v2-s_++$-63&aq&)n-(t4*y89
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '.vercel.app', '.now.sh', '127.0.0.1']
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', '.now.sh']
 
 
 # Para utilizar a autenticação customizada é interessante adicionar:
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'customauth',
     'bib',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_bibliotecaespecial',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'marlisonroot',
         'HOST': 'localhost',
     }
 }
