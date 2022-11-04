@@ -4,12 +4,13 @@
 {% block section %}
 <div class="container font-sizing">
     <section class="dark-section">
-        <h3 class="title dark-white font-sizing" tabindex="0">Meus livros</h3>
+        <div class="title">
+            <h3 tabindex="0" class="dark-white font-sizing">Meus livros</h3>
+        </div>
         <div class="d-flex flex-row-reverse bd-highlight mx-5 px-lg-8">
             <form action="{% url 'book.create' %}">
-                <!-- <i class="bi bi-plus-circle d-block d-sm-block d-md-none" style="font-size:32px"></i> -->
                 </span>
-                <button class="btn btn-primary btn-terciary px-lg-8 fw-bold" type="submit" style="border-radius: 50px;">
+                <button class="btn btn-terciary px-lg-8 fw-bold" type="submit" style="border-radius: 50px;" aria-label="Botão para adicionar novo livro">
                     Adicionar livro
                 </button>
             </form>

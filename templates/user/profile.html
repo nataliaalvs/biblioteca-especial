@@ -2,7 +2,7 @@
 {% block section %}
 
 <div class="text-center m-4">
-  <h2 class="fw-bolder">Dados pessoais</h2>
+  <h2 class="fw-bolder yellow-font" tabindex="0">Dados pessoais</h2>
 </div>
 
 <form class="col-md-6 offset-md-3 my-3 fw-bolder"  method="POST">
@@ -21,6 +21,58 @@
   <div class="container py-4">
     <div class="text-center">
       <button class="btn btn-outline-dark mt-auto fw-bold btn-dark-secondary" type="submit">Salvar</button>
+
+      {% comment %} <div class="col-md-6 col-lg-12 mb-5 py-5">
+        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <a class="yellow-font" href="#">Mudar minha senha</a>
+        </div>
+      </div> {% endcomment %}
+      {% comment %} <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close text-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title mb-2 text-center yellow-font">Mudar senha</h2>
+                                <!-- Icon Divider-->
+                                <!-- <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div> -->
+                                <!-- Portfolio Modal - Image-->
+                                <!-- Portfolio Modal - Text-->
+                                <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
+                                <div class="form-outline mb-2">
+                                  <label class="form-label yellow-font" for="id_email" tabindex="0">Senha atual</label>
+                                  <input type="password" class="form-control" />
+                                </div>
+                                <div class="form-outline mb-2">
+                                  <label class="form-label yellow-font" for="id_email" tabindex="0">Nova senha</label>
+                                  <input type="password"  class="form-control" />
+                                </div>
+                                <div class="form-outline mb-2">
+                                  <label class="form-label yellow-font" for="id_email" tabindex="0">Confirme sua senha</label>
+                                  <input type="password" class="form-control" />
+                                </div>
+
+                                <button class="btn btn-terciary my-3" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div> {% endcomment %}
     </div>
   </div>
 </form>

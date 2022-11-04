@@ -17,8 +17,8 @@
 
 
 .contrast h1,
-.contrast h2,
-.contrast h4,
+/* .contrast h2, */
+/* .contrast h4, */
 .contrast h5,
 .contrast h6,
 /* .contrast p, */
@@ -31,11 +31,6 @@
 .contrast u {
     color: rgb(255, 255, 255) !important;
 }
-
-.contrast span { 
-    color: black !important;
-}
-
 
 /* .contrast button, 
 .contrast input[type=button],
@@ -65,6 +60,24 @@
     color: rgb(255, 255, 255) !important;
 }
 
+.contrast input[type=text]:focus,
+.contrast input[type=password]:focus,
+.contrast input[type=url]:focus,
+.contrast input[type=search]:focus,
+.contrast input[type=email]:focus,
+.contrast input[type=tel]:focus,
+.contrast input[type=date]:focus,
+.contrast input[type=month]:focus,
+.contrast input[type=week]:focus,
+.contrast input[type=datetime]:focus,
+.contrast input[type=datetime-local]:focus,
+.contrast textarea:focus,
+.contrast input[type=number]:focus {
+    border: black 2px solid;
+    outline: 0;
+    box-shadow: 0 0 8px 4px #ffff04e1;
+}
+
 .contrast img.on-contrast-force-gray {
     filter: grayscale(100%) contrast(120%);
 }
@@ -73,105 +86,124 @@
     filter: brightness(0) invert(1);
 }
 
-.contrast i, a, .dark-p, 
-.contrast h3, .dark-text{
-    color: #000;
-}
-
-.contrast input[type=text], .contrast .i-home, .contrast .i-prev, .contrast .i-next {
+.contrast input[type=text] {
     color: white;
 }
 
 
-.nav-link {
+.contrast h3.login-title, .contrast i,
+a, .dark-p, .dark-text, .contrast span {
     color: #000;
 }
 
-.contrast .btn-dark-secondary {
+
+/* BOTÕES */
+
+.btn-dark-secondary {
     font-weight: bolder;
-    background-color: #5533ff;
+    background-color: #0019fc;
     border: #5533ff;
     color: white;
-    box-shadow: 0px 1px 9px 2px rgba(80, 75, 75, 0.616);
+    /* box-shadow: 0px 1px 9px 2px rgba(126, 113, 113, 0.616); */
 }
 
-.contrast .btn-dark-secondary:hover {
-    background-color: #06b8d8;
-    color: black;
-    box-shadow: 0px 1px 9px 2px rgba(80, 75, 75, 0.616);
+.btn-dark-secondary:hover {
+    box-shadow: 0px 1px 9px 2px rgba(82, 165, 248, 0.89);
+    /* box-shadow: 0px 1px 9px 2px yellow; */
+    transform: translateY(-2px);
+
+
 }
 
-.contrast .btn-dark-primary {
-    background-color: rgb(0, 0, 0);
+.btn-dark-primary {
+    background-color: #000000;
     border: #000;
     color: yellow;
 }
 
-.contrast .btn-dark-primary:hover {
-    background-color: #090979;
-    border: #000;
+.btn-dark-primary:hover {
+    box-shadow: 0px 0px 10px 3px rgb(255, 251, 0);
+    background-color: black;
     color: yellow;
+border:yellow 1px solid;
 }
 
-.contrast .btn-text-color {
-    color: yellow;
-}
 
 .contrast .hero-area .overlay {
     background: #000;
     height: 10%;
 }
 
-
- nav{
-    background: #5533ff;
-    background: linear-gradient(45deg, #5533ff 40%, #25ddf5 100%);
-}
-
 .contrast .b-section {
     background: #000;
 }
 
-.dropdown-menu {
-    background: #25ddf5;
-    background: linear-gradient(45deg, #25baf5 40%, #57e2f5 100%);
-}
 
 
-/*.contrast .card {
-    border-image: linear-gradient(#b200df, #48ff00) 60; *
-    background: -webkit-linear-gradient(to left, #00ffd5 50%, #4ef1bb 100%); */
-    /* border-image: linear-gradient(#01b3d6 30%,#00f7ff 55%, #00ffbb 100%) 60; */
-    /* border-image: linear-gradient(#00ffbb 30%, #00f7ff 55%, #01b3d6 100%) 60;
-    border-width: 4px;
-    border-style: solid; */
-
-    /* background: 
-    linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
-    linear-gradient(to right, darkblue, darkorchid) border-box;
-  border-radius: 50em;
-  border: 4px solid transparent; */
-
-    /* box-shadow: 2px 2px 30px 2px lightcyan; */
-/* 
-    border-left: 8px solid white;
-    border-style: dotted ; */
-
-/* } */
-
-
-/* .contrast .dark-p {
-    color: #000;
-} */
-
-.rad:hover, .rad:focus, 
+/* .rad:hover, .rad:focus,
 .contrast #toggleDark:hover {
     color: #1e2125;
     background-color: #06b8d8;
     border-radius: 50px;
-  }
+} */
 
-  .contrast .dark-white {
-    color: white !important;
-  }
+.contrast .yellow-font, .contrast .btn-text-color,
+.contrast .i-home, .contrast .i-prev,
+.contrast .i-next, .contrast #services .services-item p,
+.contrast .hero-area .contents p,
+.contrast #services .services-item h4, .contrast h1, 
+.contrast .hero-area .contents h2, .contrast h3, .contrast h4  {
+    color: yellow;
+}
 
+.contrast #services .services-item .icon i {
+    font-size: 40px;
+}
+
+.contrast #services .services-item h4 {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.contrast #services .services-item p {
+    font-size: 18px;
+}
+
+/* FOCUS */
+
+.contrast h1:focus, .contrast h2:focus, .contrast h3:focus, .contrast h4:focus, .contrast h5:focus, .contrast h6:focus {
+    border: white 2px solid;
+    outline: 0;
+    box-shadow: 0 0 2px 1px white;
+}
+
+
+.contrast p:focus {
+    border: white 2px solid;
+    outline: 0;
+    box-shadow: 0 0 2px 1px white;
+}
+
+.contrast .btn:focus {
+        border: #ffffff 2px solid;
+        outline: 0;
+        box-shadow: 0 0 4px 1px white;
+
+}
+
+.contrast .hero-area .contents .btn-border:focus {
+    border: black 3px solid;
+    width: 220px;
+    box-shadow: 0 0 5px 1px white;
+}
+
+
+.contrast #services .services-item:focus {
+    border: yellow 3px solid;
+    outline: 0;
+    box-shadow: 0 0 15px 2px rgb(0, 0, 0);
+}
+
+.contrast .modal-content {
+    background-color: rgb(9, 9, 97);
+}

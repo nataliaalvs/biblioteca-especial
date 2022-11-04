@@ -11,24 +11,24 @@
   <div class="container pb-5">
     <div class="row space-100">
       <div class="col-lg-6 col-md-12 col-xs-12">
-        <div class="contents">
-          <h2 class="head-title">A ferramenta que é sua aliada!</h2>
-          <p class="">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
+        <div class="contents yellow-font">
+          <h2 class="head-title" aria-label="A ferramenta que é sua aliada!" tabindex="0">A ferramenta que é sua aliada!</h2>
+          <p aria-label="Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão" tabindex="0">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
           <div class="header-button">
             <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold h-100 p-2" tabindex="0" aria-label="Entrar no sistema">Entrar</a>
-            <a href="#services" class="btn btn-border fw-bold h-100 p-2" tabindex="0" aria-label="Mais informações">Mais informações</a>
+            <a href="#services" class="btn btn-border fw-bold h-100 p-2" tabindex="0" aria-label="Mais informações sobre o site">Mais informações</a>
           </div>
         </div>
       </div>
       <div class="col-lg-6 col-md-12 col-xs-12 p-0">
         <div class="intro-img">
-          <img src="{% static 'images/reading-phone.png' %}" alt="Imagem de uma mulher com um celular">
+          <img src="{% static 'images/reading-phone.png' %}" alt="Imagem de uma pessoa usando uma biblioteca pelo celular">
         </div>
       </div>
     </div>
   </div>
 </header>
-
+<hr>
 {% endblock header%}
 
 {% block section %}
@@ -39,34 +39,35 @@
       <!-- Start Col -->
       <div class="col-12 col-md-12 col-lg-4 col-sm-12 m-0">
 
-        <div class="services-item text-center h-100 m-0">
+        <div class="services-item text-center" tabindex="0">
           <div class="icon">
-            <i class="bi bi-book-half"></i>
+            <i class="bi bi-toggles" aria-label="Ícone de um troca de tema" tabindex="0"></i>
           </div>
-          <h4 tabindex="0"  class="font-sizing">Leitor Inteligente</h4>
-          <p tabindex="0" class="dark-white font-sizing">Nosso sistema aceita qualquer tipo de PDF, o qual será lido e interpretado como texto em português pronto para sua leitura.</p>
+          <h4 tabindex="0" aria-label="Alto contraste" class="font-sizing">Alto contraste</h4>
+          <p tabindex="0" aria-label="Use o nosso tema de alto contraste para ter uma leitura menos cansativa." class="font-sizing">Use o nosso tema de alto contraste para ter uma leitura menos cansativa.</p>
         </div>
       </div>
       <!-- End Col -->
       <!-- Start Col -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12 m-0">
-        <div class="services-item text-center h-100 m-0">
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
+        <div class="services-item text-center" tabindex="0">
           <div class="icon">
-            <i class="bi bi-universal-access"></i>
+            <i class="bi bi-type" aria-label="Ícone indicando mudança no tamanho da fonte" tabindex="0"></i>
           </div>
-          <h4 tabindex="0" class="font-sizing">Acessibilidade</h4>          
-          <p tabindex="0" class="dark-white font-sizing">O nosso objetivo é trazer a possibilidade de leitura para todos os tipos de leitores. Tornando os livros acessíveis para todos.</p>
+          <h4 aria-label="Tamanho da fonte" tabindex="0" class="font-sizing">Tamanho da fonte</h4>
+          <p tabindex="0" aria-label="Altere o tamanho da fonte e deixe o site na sua preferência para ler." class="font-sizing">Altere o tamanho da fonte e deixe o site na sua preferência para ler.
+          </p>
         </div>
       </div>
       <!-- End Col -->
       <!-- Start Col -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12 m-0">
-        <div class="services-item text-center h-100 m-0">
+      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
+        <div class="services-item text-center" tabindex="0">
           <div class="icon">
-            <i class="bi bi-server"></i>
+            <i class="bi bi-journals" aria-label="ícone de um livro" tabindex="0"></i>
           </div>
-          <h4 tabindex="0" class="font-sizing">Documentos Salvos</h4>
-          <p tabindex="0" class="dark-white font-sizing">No Biblioteca Especial seus livros guardadinhos aqui, sem precisar reenviá-los sempre que quiser ler novamente.</p>
+          <h4 tabindex="0" aria-label="Biblioteca" class="font-sizing">Biblioteca</h4>
+          <p tabindex="0" aria-label="Converta e guarde seus livros preferidos em pdf tudo em apenas um lugar." class="font-sizing">Converta e guarde seus livros favoritos em pdf tudo em apenas um lugar.</p>
         </div>
       </div>
       <!-- End Col -->
@@ -78,51 +79,35 @@
 {% endblock section %}
 
 {% block footer %}
+<footer>
 
-<footer id="footer">
   <!-- Footer Area Start -->
   <section id="footer-Content" class="dark-footer">
     <div class="container container-fluid fw-bolder">
       <!-- Start Row -->
       <div class="row">
 
-        <!-- Start Col -->
-        <!-- <div class="col-lg-4 col-md-10 col-12 col-sm-12 col-xs-4 col-mb-12"> -->
-        <div class="col-12 col-md-4 col-sm-4 col-lg-">
-          <!-- <div class="col-12 col-md-12 col-lg-4 col-sm-12"> -->
-
-          <div class="footer-logo">
-            <img src="{% static 'images/logo/logo2.svg' %}" alt="">
-            <!-- <h2>Biblioteca Especial</h2> -->
+        <div class="col-12 col-md-5 col-sm-4 col-lg-4">
+          <div class="footer-logo col-12">
+            <img src="{% static 'images/logo/logo2.svg' %}" alt="Logo do site" aria-label="Biblioteca especial" tabindex="0">
           </div>
         </div>
-        <!-- End Col -->
         <!-- Start Col -->
-        <div class="col-10 col-md-12 col-lg-3 col-sm-12">
+        <div class="col-10 col-md-12 col-lg-4 col-sm-12">
           <div class="widget">
-            <h3 class="block-title">Informações 1</h3>
-            <p>Feito em DJANGO Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora expedita voluptate mollitia labore deserunt cupiditate officiis, numquam quas nesciunt laborum! Harum tempori</p>
+            <h3 class="block-title" tabindex="0" aria-label="Sobre a biblioteca especial">Sobre a biblioteca especial</h3>
+            <p tabindex="0" aria-label="Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.">Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.</p>
+          </div>
+        </div>
+        <div class="col-10 col-md-12 col-lg-4 col-sm-12">
+          <div class="widget">
+            <h3 class="block-title" tabindex="0" aria-label="Informações técnicas">Informações técnicas</h3>
+            <p tabindex="0" aria-label="Programado em DJANGO">Programado em DJANGO </p>
+            <p tabindex="0" aria-label="Responsáveis: Alunos do IFRN">Responsáveis: Alunos do IFRN - CA</p>
+            <p tabindex="0" aria-label="Data de finalização: 04/11/2022">Data de finalização: 04/11/2022 </p>
             </ul>
           </div>
         </div>
-        <!-- Start Col -->
-        <div class="col-10 col-md-12 col-lg-2 col-sm-12">
-          <div class="widget">
-            <h3 class="block-title">Informações 2</h3>
-            <p>Appropriately implement calysts for change visa wireless catalysts for change. </p>
-            <!-- <div class="subscribe-area"> -->
-            <!-- <input type="email" class="form-control" placeholder="Enter Email">
-                <span><i class="lni-chevron-right"></i></span> -->
-            <!-- </div> -->
-          </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-3 col-sm-12">
-          <div class="widget">
-            <h3 class="block-title">Informações 3</h3>
-            <p>Appropriately implement calysts for change visa wireless catalysts for change. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error quos, nulla minus neque enim suscipit voluptatem temporibus? </p>
-          </div>
-        </div>
-        <!-- End Col -->
       </div>
       <!-- End Row -->
     </div>
@@ -130,18 +115,13 @@
 
     <div class="copyright">
       <div class="container">
-        <!-- Star Row -->
         <div class="row">
           <div class="col-md-12">
             <div class="site-info text-center">
-              <!-- <p>Crafted by <a href="http://uideck.com" rel="nofollow">UIdeck</a></p> -->
-              <p class="m-0 text-center opacity-50 mb-4">Copyright &copy; Biblioteca Especial 2022</p>
+              <p class="text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p>
             </div>
-
           </div>
-          <!-- End Col -->
         </div>
-        <!-- End Row -->
       </div>
     </div>
     <!-- Copyright End -->
