@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_bibliotecaespecial',
         'USER': 'root',
-        'PASSWORD': 'marlisonroot',
+        'PASSWORD': 'labredes2022',
         'HOST': 'localhost',
     }
 }

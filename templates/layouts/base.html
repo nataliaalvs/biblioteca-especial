@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load l10n %}
 {% load mathfilters %}
 <html lang="pt-br">
     <head>
@@ -43,9 +44,9 @@
         {% if user.is_authenticated %} 
             <!-- Sizing font using DB -->            
             <style>
-                .font-sizing{
-                    font-size: calc(1rem + {{ request.user.font_size |mul:50 }}%) !important;
-                    line-height: calc(1rem + {{ request.user.font_size |mul:101 }}%) !important;
+                .font-sizing {
+                    font-size: calc(1rem + {{ request.user.font_size |mul:50 | unlocalize }}%) !important;
+                    line-height: calc(1rem + {{ request.user.font_size |mul:101 | unlocalize }}%) !important;
                     word-wrap: break-word;
                 }
                 
@@ -60,7 +61,7 @@
             <div class="container px-4 px-lg-5">
                 {% if user.is_authenticated %}                
                     <a class="navbar-brand dark-white font-sizing" href="{% url 'book.index' %}" aria-label="Opção para voltar para sua biblioteca">Biblioteca Especial</a>
-                    {{ request.user.font_size }}
+                    {{ request.user.font_size | unlocalize }}
                 {% else %}
                     <a class="navbar-brand dark-white font-sizing" href="{% url 'home' %}" aria-label="Opção para voltar para a tela inicial">Biblioteca Especial</a>
                 {% endif %}

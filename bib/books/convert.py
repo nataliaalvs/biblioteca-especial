@@ -18,13 +18,15 @@ def convert(file):
 				folder = path_file + str(int(epoch_time)) + '_' + file # generate a folder name for temporary images
 				combined = folder + '/' + file # come up with temporary export path
 				
+				print('create folder')
 				# create folder
 				if not os.path.exists(folder): # make the temporary folder
 					os.makedirs(folder)	
-
+				
+				print('convert PDF to PNG(s)')
 				# convert PDF to PNG(s)
-				magick = 'convert -density 150 "' + path_file + file + '.pdf" "' + combined + '-%04d.png"'
-				os.system(magick)
+				magick = 'convert -density 150 "' + path_file + file + '.pdf" -colorspace RGB "' + combined + '-%04d.png"'
+				os.system(magick)							
 
 				# convert PNG(s) to PDF(s) with OCR data
 				pngs = [f for f in os.listdir(folder) if os.path.isfile(os.path.join(folder, f))]
