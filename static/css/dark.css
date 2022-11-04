@@ -207,3 +207,7 @@ border:yellow 1px solid;
 .contrast .modal-content {
     background-color: rgb(9, 9, 97);
 }
+
+.contrast .hero-area .overlay {
+  border-bottom: 2px solid white;
+}

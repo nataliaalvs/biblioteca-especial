@@ -51,27 +51,27 @@ document.body.onload = () => {
             if(el.nodeName === 'H1' || el.nodeName === 'H2' || el.nodeName === 'H3' || el.nodeName === 'H4' || el.nodeName === 'H5' || el.nodeName === 'H6') {
                 switch (el.nodeName) {
                     case 'H2':
-                        el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
-                        el.style.setProperty( 'line-height', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
+                        el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
+                        // el.style.setProperty( 'line-height', 'calc(9.5px + '+String(this.get() * 70) + '%)', 'important' );
                         break;
 
                     case 'H2':
-                        el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
+                        el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
                         el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
                         break;
 
                     case 'H2':
-                            el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
+                            el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
                             el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
                             break;
 
                     case 'H4':
                         el.style.setProperty( 'font-size', 'calc(calc(1rem + 0.3vw) + '+String(this.get() * 100) + '%)', 'important' );
-                        el.style.setProperty( 'line-height', 'calc(1.2rem + '+String(this.get() * 40) + '%)', 'important' );
+                        // el.style.setProperty( 'line-height', 'calc(1.2rem + '+String(this.get() * 40) + '%)', 'important' );
                         break;
 
                     case 'H2':
-                        el.style.setProperty( 'font-size', 'calc(38px + '+String(this.get() * 100) + '%)', 'important' );
+                        el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
                         el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
                         break;
                 

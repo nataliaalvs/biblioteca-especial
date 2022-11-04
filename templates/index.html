@@ -12,11 +12,11 @@
     <div class="row space-100">
       <div class="col-lg-6 col-md-12 col-xs-12">
         <div class="contents yellow-font">
-          <h2 class="head-title" aria-label="A ferramenta que é sua aliada!" tabindex="0">A ferramenta que é sua aliada!</h2>
-          <p aria-label="Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão" tabindex="0">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
+          <h2 class="head-title font-sizing" aria-label="A ferramenta que é sua aliada!" tabindex="0">A ferramenta que é sua aliada!</h2>
+          <p class="font-sizing" aria-label="Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão" tabindex="0">Adicione seus livros a uma biblioteca (especial)mente para você na palma da sua mão.</p>
           <div class="header-button">
-            <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold h-100 p-2" tabindex="0" aria-label="Entrar no sistema">Entrar</a>
-            <a href="#services" class="btn btn-border fw-bold h-100 p-2" tabindex="0" aria-label="Mais informações sobre o site">Mais informações</a>
+            <a href="{% url 'auth.login' %}" class="btn btn-terciary fw-bold h-100 p-2 font-sizing" tabindex="0" aria-label="Entrar no sistema">Entrar</a>
+            <a href="#services" class="btn btn-border fw-bold h-100 p-2 btn-lg btn-sm font-sizing" tabindex="0" aria-label="Mais informações sobre o site">Mais informações</a>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
     </div>
   </div>
 </header>
-<hr>
+<!-- <hr> -->
 {% endblock header%}
 
 {% block section %}
@@ -36,10 +36,9 @@
   <div class="container fw-bolder">
 
     <div class="row">
-      <!-- Start Col -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12 m-0">
+      <div class="serv-card col-12 col-md-12 col-lg-4 col-sm-12 my-2">
 
-        <div class="services-item text-center" tabindex="0">
+        <div class="services-item text-center h-100 m-0" tabindex="0">
           <div class="icon">
             <i class="bi bi-toggles" aria-label="Ícone de um troca de tema" tabindex="0"></i>
           </div>
@@ -47,10 +46,9 @@
           <p tabindex="0" aria-label="Use o nosso tema de alto contraste para ter uma leitura menos cansativa." class="font-sizing">Use o nosso tema de alto contraste para ter uma leitura menos cansativa.</p>
         </div>
       </div>
-      <!-- End Col -->
-      <!-- Start Col -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
-        <div class="services-item text-center" tabindex="0">
+
+      <div class="serv-card col-12 col-md-12 col-lg-4 col-sm-12 my-2">
+        <div class="services-item text-center h-100 m-0" tabindex="0">
           <div class="icon">
             <i class="bi bi-type" aria-label="Ícone indicando mudança no tamanho da fonte" tabindex="0"></i>
           </div>
@@ -59,10 +57,9 @@
           </p>
         </div>
       </div>
-      <!-- End Col -->
-      <!-- Start Col -->
-      <div class="col-12 col-md-12 col-lg-4 col-sm-12">
-        <div class="services-item text-center" tabindex="0">
+
+      <div class="serv-card col-12 col-md-12 col-lg-4 col-sm-12 my-2">
+        <div class="services-item text-center h-100 m-0" tabindex="0">
           <div class="icon">
             <i class="bi bi-journals" aria-label="ícone de um livro" tabindex="0"></i>
           </div>
@@ -70,7 +67,6 @@
           <p tabindex="0" aria-label="Converta e guarde seus livros preferidos em pdf tudo em apenas um lugar." class="font-sizing">Converta e guarde seus livros favoritos em pdf tudo em apenas um lugar.</p>
         </div>
       </div>
-      <!-- End Col -->
 
     </div>
   </div>
@@ -95,16 +91,16 @@
         <!-- Start Col -->
         <div class="col-10 col-md-12 col-lg-4 col-sm-12">
           <div class="widget">
-            <h3 class="block-title" tabindex="0" aria-label="Sobre a biblioteca especial">Sobre a biblioteca especial</h3>
-            <p tabindex="0" aria-label="Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.">Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.</p>
+            <h4 class="block-title font-sizing" tabindex="0" aria-label="Sobre a biblioteca especial">Sobre a biblioteca especial</h4>
+            <p class="font-sizing" tabindex="0" aria-label="Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.">Um software desenvolvido por uma instituição pública para quem busca por acessibilidade ao ler.</p>
           </div>
         </div>
         <div class="col-10 col-md-12 col-lg-4 col-sm-12">
           <div class="widget">
-            <h3 class="block-title" tabindex="0" aria-label="Informações técnicas">Informações técnicas</h3>
-            <p tabindex="0" aria-label="Programado em DJANGO">Programado em DJANGO </p>
-            <p tabindex="0" aria-label="Responsáveis: Alunos do IFRN">Responsáveis: Alunos do IFRN - CA</p>
-            <p tabindex="0" aria-label="Data de finalização: 04/11/2022">Data de finalização: 04/11/2022 </p>
+            <h4 class="block-title font-sizing" tabindex="0" aria-label="Informações técnicas">Informações técnicas</h4>
+            <p class="font-sizing" tabindex="0" aria-label="Programado em DJANGO">Programado em DJANGO </p>
+            <p class="font-sizing" tabindex="0" aria-label="Responsáveis: Alunos do IFRN">Responsáveis: Alunos do IFRN - CA</p>
+            <p class="font-sizing" tabindex="0" aria-label="Data de finalização: 04/11/2022">Data de finalização: 04/11/2022 </p>
             </ul>
           </div>
         </div>
@@ -118,7 +114,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="site-info text-center">
-              <p class="text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p>
+              <p class="text-center opacity-50 font-sizing">Copyright &copy; Biblioteca Especial 2022</p>
             </div>
           </div>
         </div>
