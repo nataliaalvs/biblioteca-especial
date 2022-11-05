@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load mathfilters %}
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
@@ -15,15 +16,15 @@
         <!-- <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo/favicon-16x16.png' %}"> -->
         <link rel="android-chrome-192x192" type="image/png" sizes="192x192"
             href="{% static 'mages/logo/android-chrome-192x192.png'%}">
-        <link rel="manifest" href="/site.webmanifest">
 
         <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <!-- <link href="{% static 'css/login.css' %}" rel="stylesheet" /> -->
         <link rel="stylesheet" href="{% static 'css/dark.css' %}">
+        <link rel="stylesheet" href="{% static 'css/dyslexia.css' %}">
 
 
         <!-- Google fonts icons -->
@@ -35,61 +36,108 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+        
+        
         {% block styles %}
         {% endblock %}
+        {% if user.is_authenticated %} 
+            <!-- Sizing font using DB -->            
+            <style>
+                .font-sizing{
+                    font-size: calc(1rem + {{ request.user.font_size |mul:50 }}%) !important;
+                    line-height: calc(1rem + {{ request.user.font_size |mul:101 }}%) !important;
+                    word-wrap: break-word;
+                }
+                
+            </style>
+            
+        {% endif %}
     </head>
-    <body>
+    <body class="{% if user.is_authenticated %} {% if request.user.contrast %}contrast{% endif %} {% if request.user.dyslexic %}dyslexia{% endif %} {% endif %}" >
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fw-bolder" id="home">
             <!-- navbar-fixed -->
             <div class="container px-4 px-lg-5">
-                {% if user.is_authenticated %}
-                    <a class="navbar-brand" href="{% url 'book.index' %}">Biblioteca Especial</a>
+                {% if user.is_authenticated %}                
+                    <a class="navbar-brand dark-white font-sizing" href="{% url 'book.index' %}" aria-label="Opção para voltar para sua biblioteca">Biblioteca Especial</a>
+                    {{ request.user.font_size }}
                 {% else %}
-                    <a class="navbar-brand" href="{% url 'home' %}">Biblioteca Especial</a>
+                    <a class="navbar-brand dark-white font-sizing" href="{% url 'home' %}" aria-label="Opção para voltar para a tela inicial">Biblioteca Especial</a>
                 {% endif %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#footer">Sobre</a></li>
+                        {% if request.path == '/' %}
+                            <li class="nav-item"><a class="nav-link active dark-white font-sizing" aria-current="page" href="#footer" aria-label="Opção para seção sobre do site">Sobre</a></li>
+                        {% endif %}                        
                     </ul>
     
                     {% if user.is_authenticated %} 
-                    <div class="d-flex justify-content-end col-12 col-sm-12 col-md-8 col-lg-2">
-    
-                        <li class="nav-item dropdown-item pe-2  pe-xs-5 pe-md-5 pe-lg-3 rad" style="cursor:pointer;"
-                            onclick="window.toggleContrast()" onkeypress="window.toggleContrast()">
-                            <i class="bi bi-circle-half" id="toggleDark" tabindex="0"></i>
+                    <div class="d-flex justify-content-end col-12 col-sm-12 col-md-2 col-lg-2">                                                
+                        <li class="nav-item py-1 px- px-xs- px-md- px-lg- rad" style="cursor:pointer;"
+                        onclick="document.querySelector('#contrast').submit()" onkeypress="document.querySelector('#contrast').submit()">
+                            <i class="bi bi-circle-half font-sizing" id="toggleDark" tabindex="0" aria-label="Ícone para mudar para o modo alto contraste" title="Modo alto contraste"></i>
+                        </li>   
+                        <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad font-sizing" style="cursor:pointer;"
+                            onclick="document.querySelector('#dyslexic').submit()" onkeypress="document.querySelector('#dyslexic').submit()">
+                            <i class="bi bi-fonts" id="toggleDark" tabindex="0" aria-label="Ícone para mudar para o modo disléxico" title="Modo disléxico"></i>
+                        </li>     
+                        <li>
+                            <li class="nav-item fw-bold py-1 px-3 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_plus').submit()" onkeypress="document.querySelector('#form_font_plus').submit()" value="{{ request.user.font_size }}" aria-label="ícone para aumentar o tamanho da fonte">A+</li>
+                            <li class="nav-item fw-bold py-1 px-3 me-5 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="document.querySelector('#form_font_less').submit()" onkeypress="document.querySelector('#form_font_less').submit()" value="{{ request.user.font_size }}" aria-label="ícone para diminuir o tamanho da fonte">A-</li>
                         </li>
-                        <li class="nav-item dropdown-item fw-bold px-3 rad" style="cursor:pointer;" tabindex="0">A+</li>
-                        <li class="nav-item dropdown-item fw-bold me-5 rad" style="cursor:pointer;" tabindex="0">A-</li>
-                        </li>
+                        <form method="POST" id="contrast" action="{% url 'contrast' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                        </form>
+                        <form method="POST" id="dyslexic" action="{% url 'dyslexic' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                        </form>
+                        <form method="POST" id="form_font_plus" action="{% url 'font_plus' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                        </form>
+                        <form method="POST" id="form_font_less" action="{% url 'font_less' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                        </form>
+
                     </div>                   
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <!-- <i class="bi bi-person-fill me-1" style="font-size: 19px;"></i> -->
-                            Nome do usuário</a>
+                        <a class="nav-link dropdown-toggle font-sizing" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ request.user.name }}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item fw-bold" href="{% url 'user.profile' %}">Meu perfil</a></li>
+                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'user.profile' %}" aria-label="Opção para ver seu perfil">Meu perfil</a></li>
                             <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item fw-bold" href="{% url 'auth.logout' %}">Sair</a></li>
+                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'auth.logout' %}" aria-label="Opção para sair da sua conta">Sair</a></li>
                         </ul>
-                    </li>
+                    </li>                    
                     {% else %}
-                        <div class="d-flex justify-content-end me-2">
-                            <li class="nav-item dropdown-item pe-2  pe-xs-5 pe-md-5 pe-lg-3 rad" style="cursor:pointer;"
-                                onclick="window.toggleContrast()" onkeypress="window.toggleContrast()">
-                                <i class="bi bi-circle-half" id="toggleDark" tabindex="0"></i>
-                            </li>
-                        </div>
+                        <div class="d-flex justify-content-end col-12 col-sm-12 col-md-8 col-lg-2">                        
+                            <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad font-sizing" style="cursor:pointer;"
+                                onclick="window.toggleContrast()" onkeypress="window.toggleContrast()" title="Modo alto contraste">
+                                <i class="bi bi-circle-half" id="toggleDark" tabindex="0"  aria-label="Ícone para mudar para o modo alto contraste"></i>
+                            </li>   
+                            <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad font-sizing" style="cursor:pointer;"
+                                onclick="window.toggleDyslexia()" onkeypress="window.toggleDyslexia()" title="Modo disléxico">
+                                <i class="bi bi-fonts" id="toggleDark" tabindex="0" aria-label="Ícone para mudar para o modo disléxico"></i>
+                            </li>     
+                            <li>
+                                <li class="nav-item fw-bold py-1 px-3 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="window.changeFontSize('plus')" onkeypress="window.changeFontSize('plus')" aria-label="ícone para aumentar o tamanho da fonte">A+</li>
+                                <li class="nav-item fw-bold py-1 px-3 me-5 rad font-sizing" style="cursor:pointer;" tabindex="0" onclick="window.changeFontSize('less')" onkeypress="window.changeFontSize('less')" aria-label="ícone para diminuir o tamanho da fonte">A-</li>
+                            </li>                            
+    
+                        </div>                   
                         <form class="d-flex my-3" action="{% url 'auth.login' %}">
-                            <button class="btn btn-terciary btn-block btn-dark-terciary fw-bold " type="submit">
-                            <!-- <i class="bi bi-person-fill" style="font-size: 19px"></i> -->
+                            <button class="btn btn-terciary btn-block btn-dark-terciary font-sizing" type="submit" aria-label="Botão para entrar na sua conta">
+
                                 Entrar
                             </button>
                         </form>
+                        
                     {% endif %}
                 </div>
             </div>
@@ -103,13 +151,34 @@
         </div>
         {% block footer %}
             <!-- Footer-->
-            <footer class="py-5">
-                <div class="container"><p class="m-0 text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p></div>
+            <footer>
+                <div class="copyright footer">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="site-info text-center">
+                            <p class="text-center opacity-50">Copyright &copy; Biblioteca Especial 2022</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </footer>
         {% endblock footer %}
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>        
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="{% static 'js/color-cards.js' %}"></script>
+            <!-- Core theme JS-->
+        {% if not user.is_authenticated %} 
+            <script src="{% static 'js/contrast-mode.js' %}"></script>
+            <script src="{% static 'js/font-sizing.js' %}"></script>
+            <script src="{% static 'js/dyslexic-mode.js' %}"></script>
+        {% endif %}
+        
+        {% block scripts %}
+            
+        {% endblock scripts %}
     </body>
 </html>

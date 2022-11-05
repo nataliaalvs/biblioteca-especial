@@ -3,14 +3,14 @@
 
 <div class="container">
   <div class="text-center m-4">
-    <h2 class="fw-bolder" tabindex="0">Adicionar novo livro</h2>
+    <h2 class="fw-bolder yellow-font" tabindex="0">Adicionar novo livro</h2>
   </div>
 
 
   <form class="fw-bolder div-center"  method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {% for field in form %}
-      <div class="form-group mb-3">
+      <div class="form-group mb-3 yellow-font">
         {{ field.label_tag }}
         {{ field }}
       </div>

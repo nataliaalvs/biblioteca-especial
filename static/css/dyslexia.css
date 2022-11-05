@@ -1,0 +1,16 @@
+@font-face {
+    font-family: OpenDyslexic;
+    src: url('../fonts/open_dyslexic/OpenDyslexic-Regular.otf');
+}
+
+.dyslexia {
+    font-family: OpenDyslexic !important;       
+    letter-spacing: .05rem !important;
+    word-spacing: .3rem !important;
+}
+
+.dyslexia p, .dyslexia h1, .dyslexia h2, .dyslexia h3, .dyslexia h4, .dyslexia h5, .dyslexia h6, .dyslexia a, .dyslexia button {    
+    font-family: OpenDyslexic !important;
+    letter-spacing: .1rem !important;
+
+}

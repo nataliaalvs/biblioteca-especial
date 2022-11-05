@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
-from .books.convert import convert
 import PyPDF2
 import os
 
@@ -21,10 +20,6 @@ def create_book(request):
     if form.is_valid():   
         form.instance.user = request.user
         form.save() 
-        # book = Book.objects.get(path=form.cleaned_data['path'])
-        # convert(str(form.cleaned_data['path']), request.user.id)
-        # print('chamando convert(' + str(form.cleaned_data['path']) + ')')
-
         return redirect('book.index')
     return render(request, 'books/create.html', { 'form': form })
 
@@ -51,11 +46,14 @@ def show_book(request, id, pg):
     return redirect('book.index')
 
 @login_required(login_url='auth.login')
-def update_books(request):
+def update_book(request):
     pass
 
 @login_required(login_url='auth.login')
-def delete_books(request):
+def delete_book(request, id):
+    book = Book.objects.get(pk=id)
+    os.remove(str(book.path)) 
+    book.delete()
     return redirect('book.index')
 
 @login_required(login_url='auth.login')
@@ -66,5 +64,42 @@ def config(request):
 def profile(request):   
     return render(request, 'user/profile.html')
 
-def dark(request):   
-    return render(request, 'dark.html')
+@login_required(login_url='auth.login')
+def dyslexic(request):  
+    user = MyUser.objects.get(pk=request.user.id)
+    if user.dyslexic:
+        user.dyslexic = False
+    else: 
+        user.dyslexic = True
+    user.save()
+    next = request.POST.get('next', '/')    
+    return redirect(next)
+
+@login_required(login_url='auth.login')
+def contrast(request):  
+    user = MyUser.objects.get(pk=request.user.id)
+    if user.contrast:
+        user.contrast = False
+    else: 
+        user.contrast = True
+    user.save()
+    next = request.POST.get('next', '/')    
+    return redirect(next)
+
+@login_required(login_url='auth.login')
+def font_plus(request):
+    user = MyUser.objects.get(pk=request.user.id)
+    if user.font_size < 1.7:
+        user.font_size = round(user.font_size + 0.1, 2)
+        user.save()
+    next = request.POST.get('next', '/')    
+    return redirect(next)
+
+@login_required(login_url='auth.login')
+def font_less(request):
+    user = MyUser.objects.get(pk=request.user.id)
+    if user.font_size > 0.5:
+        user.font_size = round(user.font_size - 0.1, 2)
+        user.save()
+    next = request.POST.get('next', '/')    
+    return redirect(next)

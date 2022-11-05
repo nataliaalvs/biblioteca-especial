@@ -21,9 +21,13 @@ urlpatterns = [
     path('books/', index_book, name="book.index"),
     path('book/novo/', create_book, name="book.create"),
     path('book/<int:id>/<int:pg>', show_book, name='book.show'),
+    path('book/<int:id>/', delete_book, name='book.delete'),
     path('config/', config, name="user.config"),
     path('perfil/', profile, name='user.profile'),
-    path('dark/', dark, name='dark'),
+    path('contrast/', contrast, name='contrast'),
+    path('dyslexic/', dyslexic, name='dyslexic'),
+    path('font_plus/', font_plus, name='font_plus'),
+    path('font_less/', font_less, name='font_less'),
 
 
 ]

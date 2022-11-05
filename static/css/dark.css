@@ -1,0 +1,213 @@
+/* ..................................................................................................... */
+/* ALTO CONTRASTE */
+/* .contrast nav, */
+.contrast,
+/* .contrast div, */
+/* .contrast li, */
+.contrast ol,
+.contrast header,
+/* .contrast footer, */
+.contrast .dark-section,
+.contrast main,
+.contrast aside,
+.contrast article {
+    background: black !important;
+    color: white !important;
+}
+
+
+.contrast h1,
+/* .contrast h2, */
+/* .contrast h4, */
+.contrast h5,
+.contrast h6,
+/* .contrast p, */
+/* .contrast label, */
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast b,
+.contrast u {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* .contrast button, 
+.contrast input[type=button],
+.contrast input[type=reset],
+.contrast input[type=submit] {
+    background: black !important;
+    color: yellow !important;
+    border: none !important;
+}*/
+
+
+.contrast input[type=text],
+.contrast input[type=password],
+.contrast input[type=url],
+.contrast input[type=search],
+.contrast input[type=email],
+.contrast input[type=tel],
+.contrast input[type=date],
+.contrast input[type=month],
+.contrast input[type=week],
+.contrast input[type=datetime],
+.contrast input[type=datetime-local],
+.contrast textarea,
+.contrast input[type=number] {
+    background: black !important;
+    border: 1px solid white !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.contrast input[type=text]:focus,
+.contrast input[type=password]:focus,
+.contrast input[type=url]:focus,
+.contrast input[type=search]:focus,
+.contrast input[type=email]:focus,
+.contrast input[type=tel]:focus,
+.contrast input[type=date]:focus,
+.contrast input[type=month]:focus,
+.contrast input[type=week]:focus,
+.contrast input[type=datetime]:focus,
+.contrast input[type=datetime-local]:focus,
+.contrast textarea:focus,
+.contrast input[type=number]:focus {
+    border: black 2px solid;
+    outline: 0;
+    box-shadow: 0 0 8px 4px #ffff04e1;
+}
+
+.contrast img.on-contrast-force-gray {
+    filter: grayscale(100%) contrast(120%);
+}
+
+.contrast img.on-contrast-force-white {
+    filter: brightness(0) invert(1);
+}
+
+.contrast input[type=text] {
+    color: white;
+}
+
+
+.contrast h3.login-title, .contrast i,
+a, .dark-p, .dark-text, .contrast span {
+    color: #000;
+}
+
+
+/* BOTÕES */
+
+.btn-dark-secondary {
+    font-weight: bolder;
+    background-color: #0019fc;
+    border: #5533ff;
+    color: white;
+    /* box-shadow: 0px 1px 9px 2px rgba(126, 113, 113, 0.616); */
+}
+
+.btn-dark-secondary:hover {
+    box-shadow: 0px 1px 9px 2px rgba(82, 165, 248, 0.89);
+    /* box-shadow: 0px 1px 9px 2px yellow; */
+    transform: translateY(-2px);
+
+
+}
+
+.btn-dark-primary {
+    background-color: #000000;
+    border: #000;
+    color: yellow;
+}
+
+.btn-dark-primary:hover {
+    box-shadow: 0px 0px 10px 3px rgb(255, 251, 0);
+    background-color: black;
+    color: yellow;
+border:yellow 1px solid;
+}
+
+
+.contrast .hero-area .overlay {
+    background: #000;
+    height: 10%;
+}
+
+.contrast .b-section {
+    background: #000;
+}
+
+
+
+/* .rad:hover, .rad:focus,
+.contrast #toggleDark:hover {
+    color: #1e2125;
+    background-color: #06b8d8;
+    border-radius: 50px;
+} */
+
+.contrast .yellow-font, .contrast .btn-text-color,
+.contrast .i-home, .contrast .i-prev,
+.contrast .i-next, .contrast #services .services-item p,
+.contrast .hero-area .contents p,
+.contrast #services .services-item h4, .contrast h1, 
+.contrast .hero-area .contents h2, .contrast h3, .contrast h4  {
+    color: yellow;
+}
+
+.contrast #services .services-item .icon i {
+    font-size: 40px;
+}
+
+.contrast #services .services-item h4 {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.contrast #services .services-item p {
+    font-size: 18px;
+}
+
+/* FOCUS */
+
+.contrast h1:focus, .contrast h2:focus, .contrast h3:focus, .contrast h4:focus, .contrast h5:focus, .contrast h6:focus {
+    border: white 2px solid;
+    outline: 0;
+    box-shadow: 0 0 2px 1px white;
+}
+
+
+.contrast p:focus {
+    border: white 2px solid;
+    outline: 0;
+    box-shadow: 0 0 2px 1px white;
+}
+
+.contrast .btn:focus {
+        border: #ffffff 2px solid;
+        outline: 0;
+        box-shadow: 0 0 4px 1px white;
+
+}
+
+.contrast .hero-area .contents .btn-border:focus {
+    border: black 3px solid;
+    width: 220px;
+    box-shadow: 0 0 5px 1px white;
+}
+
+
+.contrast #services .services-item:focus {
+    border: yellow 3px solid;
+    outline: 0;
+    box-shadow: 0 0 15px 2px rgb(0, 0, 0);
+}
+
+.contrast .modal-content {
+    background-color: rgb(9, 9, 97);
+}
+
+.contrast .hero-area .overlay {
+  border-bottom: 2px solid white;
+}
