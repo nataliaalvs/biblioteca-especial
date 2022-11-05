@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 {% load static %}
 {% load mathfilters %}
+{% load l10n %}
+
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
@@ -43,10 +45,9 @@
         {% if user.is_authenticated %} 
             <!-- Sizing font using DB -->            
             <style>
-                .font-sizing{
-                    font-size: calc(1rem + {{ request.user.font_size |mul:50 }}%) !important;
-                    line-height: calc(1rem + {{ request.user.font_size |mul:101 }}%) !important;
-                    word-wrap: break-word;
+                .font-sizing {
+                    font-size: calc(1rem + {{ request.user.font_size |mul:50 | unlocalize }}%) !important;
+                    line-height: calc(1rem + {{ request.user.font_size |mul:101 | unlocalize }}%) !important;
                 }
                 
             </style>
@@ -76,7 +77,7 @@
     
                     {% if user.is_authenticated %} 
                     <div class="d-flex justify-content-end col-12 col-sm-12 col-md-2 col-lg-2">                                                
-                        <li class="nav-item py-1 px- px-xs- px-md- px-lg- rad" style="cursor:pointer;"
+                        <li class="nav-item py-1 px-2 px-xs-5 px-md-5 px-lg-3 rad" style="cursor:pointer;"
                         onclick="document.querySelector('#contrast').submit()" onkeypress="document.querySelector('#contrast').submit()">
                             <i class="bi bi-circle-half font-sizing" id="toggleDark" tabindex="0" aria-label="Ícone para mudar para o modo alto contraste" title="Modo alto contraste"></i>
                         </li>   

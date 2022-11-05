@@ -20,7 +20,7 @@
 
         <div class="px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                {% for book in books %}
+                {% for book in books|dictsort:"created_at" %}
                 <div class="col-12 mb-5 ">
                     <div class="card h-100 card-color col-md-12 col-sm-12 col-12 card-shadow d-flex flex-column justify-space-between" style="background-color: white; filter: grayscale(25%);">                        
                         <div class="card-body p-4" style="background: inherit;">

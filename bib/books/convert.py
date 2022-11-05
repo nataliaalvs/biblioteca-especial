@@ -22,8 +22,9 @@ def convert(file):
 				if not os.path.exists(folder): # make the temporary folder
 					os.makedirs(folder)	
 
+				print('convert PDF to PNG(s)')
 				# convert PDF to PNG(s)
-				magick = 'convert -density 150 "' + path_file + file + '.pdf" "' + combined + '-%04d.png"'
+				magick = 'convert -density 150 "' + path_file + file + '.pdf" -colorspace RGB "' + combined + '-%04d.png"'
 				os.system(magick)
 
 				# convert PNG(s) to PDF(s) with OCR data
