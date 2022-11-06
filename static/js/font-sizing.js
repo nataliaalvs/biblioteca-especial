@@ -92,7 +92,7 @@ document.body.onload = () => {
                 
                 
             } else {                
-                el.style.setProperty( 'font-size', 'calc(1rem + '+String(this.get() * 50) + '%)', 'important' );
+                el.style.setProperty( 'font-size', 'calc(25px + '+String(this.get() * 50) + '%)', 'important' );
                 el.style.setProperty( 'line-height', 'calc(1rem + '+String(this.get() * 40) + '%)', 'important' );
             }
         }        
