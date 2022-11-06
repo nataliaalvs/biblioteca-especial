@@ -2,22 +2,22 @@
 {% block section %}
 
 <div class="container">
-  <div class="text-center m-4">
-    <h2 class="fw-bolder yellow-font" tabindex="0">Adicionar novo livro</h2>
+  <div class="text-center m-4 font-sizing">
+    <h2 class="fw-bolder yellow-font font-sizing" tabindex="0">Adicionar novo livro</h2>
   </div>
 
 
   <form class="fw-bolder div-center"  method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {% for field in form %}
-      <div class="form-group mb-3 yellow-font">
+      <div class="form-group mb-3 yellow-font font-sizing">
         {{ field.label_tag }}
         {{ field }}
       </div>
     {% endfor %}
     <div class="container py-4">
       <div class="text-center">
-        <button class="btn btn-dark-secondary btn-terciary" type="submit">Adicionar</button>
+        <button class="btn btn-dark-secondary font-sizing" type="submit">Adicionar</button>
       </div>
     </div>
   </form>

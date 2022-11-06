@@ -1,81 +1,78 @@
 {% extends 'layouts/base.html' %}
 {% block section %}
 
-<div class="text-center m-4">
-  <h2 class="fw-bolder yellow-font" tabindex="0">Dados pessoais</h2>
-</div>
-
-<form class="col-md-6 offset-md-3 my-3 fw-bolder">
-
-  <div class="form-outline mb-2">
-    <label class="form-label yellow-font" for="id_name" tabindex="0">Nome</label>
-    <input type="text" id="id_name" name="name" class="form-control" value="oi"/>
+<div class="container">
+  <div class="text-center m-4 font-sizing">
+    <h2 class="fw-bolder yellow-font font-sizing" tabindex="0" aria-label="Dados pessoais">Dados pessoais</h2>
   </div>
 
-  <div class="form-outline mb-2">
-    <label class="form-label yellow-font" for="id_email" tabindex="0">Email</label>
-    <input type="email" id="id_email" name="email" class="form-control" value="tudo bem?"/>
-  </div>
-
-  <!-- <div class="form-outline mb-2">
-    <label class="form-label yellow-font" for="form3Example2" tabindex="0">Senha</label>
-    <input type="password" id="password" class="form-control"/>
-  </div> -->
-  <div class="col-md-6 col-lg-12 mb-5 py-5">
-    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-        </div>
-        <a class="yellow-font" href="#">Mudar minha senha</a>
+  <form class="my-3 fw-bolder">
+  
+    <div class="form-outline mb-2">
+      <label class="form-label yellow-font font-sizing" for="id_name" tabindex="0" aria-label="Nome do usuário">Nome</label>
+      <input type="text" id="id_name" name="name" class="form-control font-sizing" value="oi"/>
     </div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-          <div class="modal-header border-0"><button class="btn-close text-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-          <div class="modal-body pb-5">
-              <div class="container">
-                  <div class="row justify-content-center">
-                      <div class="col-lg-8">
-                          <!-- Portfolio Modal - Title-->
-                          <h2 class="portfolio-modal-title mb-2 text-center yellow-font">Mudar senha</h2>
-                          <!-- Icon Divider-->
-                          <!-- <div class="divider-custom">
-                              <div class="divider-custom-line"></div>
-                              <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                              <div class="divider-custom-line"></div>
-                          </div> -->
-                          <!-- Portfolio Modal - Image-->
-                          <!-- Portfolio Modal - Text-->
-                          <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
-                          <div class="form-outline mb-2">
-                            <label class="form-label yellow-font" for="id_email" tabindex="0">Senha atual</label>
-                            <input type="password" class="form-control" />
-                          </div>
-                          <div class="form-outline mb-2">
-                            <label class="form-label yellow-font" for="id_email" tabindex="0">Nova senha</label>
-                            <input type="password"  class="form-control" />
-                          </div>
-                          <div class="form-outline mb-2">
-                            <label class="form-label yellow-font" for="id_email" tabindex="0">Confirme sua senha</label>
-                            <input type="password" class="form-control" />
-                          </div>
-
-                          <button class="btn btn-terciary my-3" data-bs-dismiss="modal">
-                              <i class="fas fa-xmark fa-fw"></i>
-                              Fechar
-                          </button>
-                      </div>
-                  </div>
-              </div>
+  
+    <div class="form-outline mb-2">
+      <label class="form-label yellow-font font-sizing" for="id_email" tabindex="0" aria-label="Email do usuário">Email</label>
+      <input type="email" id="id_email" name="email" class="form-control font-sizing" value="tudo bem?"/>
+    </div>
+  
+    <!-- <div class="form-outline mb-2">
+      <label class="form-label yellow-font" for="form3Example2" tabindex="0">Senha</label>
+      <input type="password" id="password" class="form-control"/>
+    </div> -->
+    <div class="col-md-6 col-lg-12 mb-5 py-5">
+      <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
           </div>
+          <a class="yellow-font font-sizing" aria-label="Opção de mudar a senha" href="#">Mudar minha senha</a>
       </div>
   </div>
-</div>
-  <div class="container py-4">
-    <div class="text-center">
-      <button type="button" class="btn mt-auto fw-bold btn-dark-secondary" tabindex="0">Salvar</button>
+  
+  <!-- MODAL PARA MUDAR A SENHA -->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header border-0"><button class="btn-close text-white" type="button" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+            <div class="modal-body pb-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 font-sizing">
+                            <h2 class="mb-2 text-center yellow-font font-sizing" aria-label="Mudar senha" tabindex="0">Mudar senha</h2>
+                           
+                            <div class="form-outline mb-2">
+                              <label class="form-label yellow-font font-sizing" for="" tabindex="0">Senha atual</label>
+                              <input type="password" class="form-control font-sizing" />
+                            </div>
+                            <div class="form-outline mb-2">
+                              <label class="form-label yellow-font font-sizing" for="" tabindex="0">Nova senha</label>
+                              <input type="password"  class="form-control font-sizing" />
+                            </div>
+                            <div class="form-outline mb-2">
+                              <label class="form-label yellow-font font-sizing" for="" tabindex="0">Confirme sua senha</label>
+                              <input type="password" class="form-control font-sizing" />
+                            </div>
+  
+                            <button class="btn btn-terciary my-3 font-sizing align-items-center" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-xmark fa-fw"></i>
+                                Salvar alterações
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
-</form>
+    <div class="container py-4">
+      <div class="text-center">
+        <button type="button" class="btn mt-auto font-sizing btn-dark-secondary" tabindex="0">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
 {% endblock section %}

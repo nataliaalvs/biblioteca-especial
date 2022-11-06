@@ -8,12 +8,12 @@
 {% block section %}
 <div class="container">
     <section class="dark-section">
-        <h3 class="title" aria-label="Seção de livros">Meus livros</h3>
+        <h3 class="title font-sizing" aria-label="Seção de livros">Meus livros</h3>
         <div class="d-flex flex-row-reverse bd-highlight mx-5 px-lg-8">
             <form action="{% url 'addLivro' %}">
                 <!-- <i class="bi bi-plus-circle d-block d-sm-block d-md-none" style="font-size:32px"></i> -->
                 </span>
-                <button class="btn btn-terciary px-lg-8 fw-bold" type="submit" style="border-radius: 50px;" aria-label="Botão para adicionar livro">
+                <button class="btn btn-terciary px-lg-8 font-sizing" type="submit" style="border-radius: 50px;" aria-label="Botão para adicionar livro">
                     Adicionar livro
                 </button>
             </form>
@@ -25,8 +25,8 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col-12 mb-5">
                     <div class="card h-100 card-color col-md-12 col-sm-12 col-12 card-shadow">
-                        <div class="card-body p-4">
-                            <div class="text-center">
+                        <div class="card-body p-4 font-sizing">
+                            <div class="text-center font-sizing">
                                 <h5 class="fw-bolder col-12" tabindex="0">amanha</h5>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                         <div class="card-footer p-2 pt-0 border-top-0 bg-transparent text-center">
                             <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ler livro</a></div> -->
                             <form action="">
-                                <button id="btnRead" class="btn btn-outline-dark  fw-bold btn-dark-primary"
+                                <button id="btnRead" class="btn btn-outline-dark btn-dark-primary"
                                     formaction="{% url 'livro'%}" type="submit">Ler livro</button>
                             </form>
                         </div>

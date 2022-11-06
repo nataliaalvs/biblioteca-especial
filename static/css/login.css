@@ -120,35 +120,39 @@ h6:focus, h5:focus, h4:focus, h3:focus,  h2:focus,  h1:focus, p:focus {
 }
 
 h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: 32px;
 }
+
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 28px;
   }
 }
 
 h2, .h2 {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: 24px;
 }
+
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 2rem;
+    font-size: 22px;
   }
 }
 
 h3, .h3 {
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: 18.72px;
 }
+
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.75rem;
+    font-size: 16px;
   }
 }
 
 h4, .h4 {
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: 16px;
 }
+
 @media (min-width: 1200px) {
   h4, .h4 {
     font-size: 1.5rem;
@@ -156,16 +160,17 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: 13.28px;
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 10.72px;
 }
 
 p {
   margin-top: 20px;
   margin-bottom: 1rem;
+  font-size: 16px;
 }
 
 abbr[title],
