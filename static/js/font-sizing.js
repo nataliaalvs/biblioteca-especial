@@ -6,7 +6,7 @@ document.body.onload = () => {
 
 ('keypress', function () {
     var minSize = 0.5;
-    var maxSize = 1.7;
+    var maxSize = 1.5;
     var defaultSize = 1;
     var paramSizing = 0.1;
     console.log('vamos mudar essa font')
@@ -57,7 +57,7 @@ document.body.onload = () => {
 
                     case 'H2':
                         el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
-                        // el.style.setProperty( 'line-height', 'calc(9.5px + '+String(this.get() * 70) + '%)', 'important' );
+                        el.style.setProperty( 'line-height', 'calc(2px + '+String(this.get() * 70) + '%)', 'important' );
                         break;
                         /*ANTES ESTAVAM TODOS OS CALC IGUAIS AO DO H2, COM 35PX, LINE HEIGTH DE 1.2REM E O SEGUNDO FONT-SIZE COM 60PX*/
 
@@ -92,8 +92,8 @@ document.body.onload = () => {
                 
                 
             } else {                
-                el.style.setProperty( 'font-size', 'calc(25px + '+String(this.get() * 50) + '%)', 'important' );
-                el.style.setProperty( 'line-height', 'calc(1rem + '+String(this.get() * 40) + '%)', 'important' );
+                el.style.setProperty( 'font-size', 'calc(18px + '+String(this.get() * 50) + '%)', 'important' );
+                el.style.setProperty( 'line-height', 'calc(20px + '+String(this.get() * 40) + '%)', 'important' );
             }
         }        
         

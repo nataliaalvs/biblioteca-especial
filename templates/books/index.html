@@ -18,11 +18,11 @@
 
 
 
-        <div class="px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-12 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="px-4 px-lg-2 mt-5">
+            <div class="row gx-4 gx-lg-12 row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
                 {% for book in books|dictsort:"created_at" %}
                 <div class="col-12 mb-5">
-                    <div class="card h-100 card-color col-md-12 col-sm-12 col-12 card-shadow d-flex flex-column justify-space-between font-sizing" style="background-color: white; filter: grayscale(25%);">                        
+                    <div class="card h-100 card-color col-md-12 col-sm-12 col-12 card-shadow d-flex flex-column justify-space-between" style="background-color: white; filter: grayscale(25%);">                        
                         <div class="card-body p-4" style="background: inherit;">
                             <div class="text-center" style="background: inherit;">
                                 <h5 role="textbox" class="text-center font-sizing" tabindex="0" style="background: inherit;
@@ -34,14 +34,17 @@
                         </div>
                         <div class="card-footer p-2 pt-0 border-top-0 text-center" style="background: inherit;">                            
                             <div class="d-flex justify-content-around align-items-center" style="background: inherit;">
-                                <a id="btnRead" class="btn btn-dark btn-dark-primary font-sizing"
+                                <a id="btnRead" class="btn btn-dark-primary font-sizing"
                                     href="{% url 'book.show' book.id book.current_page %}" type="submit" aria-label="Ler {{ book.title }}">Ler livro</a>
                                 <div style="background: inherit;">
-                                    <a class="font-sizing" href="{% url 'book.delete' book.pk %}" style="background: inherit;" ><i class="bi bi-trash" style="background: inherit;
+                                    <a href="{% url 'book.delete' book.pk %}" style="background: inherit;" >
+                                    <i class="bi bi-trash" style="background: inherit;
                                         -webkit-background-clip: text;
                                                 background-clip: text;
                                         color: transparent !important;
-                                        filter: invert(1) grayscale(50%) drop-shadow(.07em .07em .07em black); font-size: 38px;" aria-label="Deletar {{ book.title }}" ></i></a>
+                                        filter: invert(1) grayscale(50%) drop-shadow(.07em .07em .07em black); font-size: 38px;" aria-label="Deletar {{ book.title }}">
+                                        </i>
+                                    </a>
                                 </div>
                             </div>
                         </div>

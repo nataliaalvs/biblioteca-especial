@@ -5,13 +5,13 @@
 {% block section %}
 
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
-<section class="fw-bolder b-section mt-5">
+<section class="fw-bolder py-5">
   <div class="container" style="max-width: 675px;">    
     <div class="card shadow-2-strong col-xs-4" style="border-radius: 1rem; border:none">
       <div class="card-body p-4 text-center m-5">
         <div class="mb-5">
           <span><i style="font-size:48px" class="bi bi-book"></i> </span>
-          <h3 class="mb-2 login-title font-sizing">Cadastro</h3>
+          <h3 class="mb-3 login-title font-sizing">Cadastro</h3>
           <p class="fw-normal font-sizing" style="color: gray">Insira seus dados para criar sua conta</p>
         </div>
 
@@ -39,7 +39,7 @@
           </div>
 
           
-          <button class="btn btn-terciary btn-dark-primary mt-3 font-sizing" type="submit">Cadastrar</button>
+          <button class="btn btn-terciary btn-dark-primary my-4 font-sizing" type="submit">Cadastrar</button>
           <div class="mt-2">
             <p class="dark-p font-sizing">Já tem uma conta? <a class="font-sizing" href="{% url 'auth.login' %}">Entre na sua conta</a>
             </p>
