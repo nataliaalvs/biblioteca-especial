@@ -7,6 +7,6 @@ from .books.convert import convert
 def create_book(sender, instance, created, **kwargs):
     if created:
         print('criado')
-        # convert(str(instance.path))
+        convert(str(instance.path))
     else:
         print('não criado')

@@ -11,12 +11,30 @@ UserModel = get_user_model()
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    password1 = forms.CharField(label='Senha', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirme sua senha', widget=forms.PasswordInput)
+    password1 = forms.CharField(label='Senha', widget=forms.PasswordInput(attrs={"class": "form-control form-control-lg"}))
+    password2 = forms.CharField(label='Confirme sua senha', widget=forms.PasswordInput(attrs={"class": "form-control form-control-lg"}))
 
     class Meta:
         model = MyUser
         fields = ('name', 'email')
+        labels = {
+            'name': _('Nome'),
+            'email': _('Email'),
+            # 'is_active': _('Conta ativada'),
+        }
+
+        widgets = {
+            'name': forms.TextInput(
+                attrs={
+                    'class': 'form-control form-control-lg'
+                },
+            ),
+            'email': forms.EmailInput(
+                attrs={
+                    'class': 'form-control form-control-lg'
+                },
+            ),
+        }
 
     def clean_password2(self):
         # Check that the two password entries match
@@ -37,25 +55,25 @@ class UserCreationForm(forms.ModelForm):
 class AuthenticationForm(forms.Form):
     """
     Base class for authenticating users. Extend this to get a form that accepts
-    username/password logins.
+    email/password logins.
     """
 
     email = forms.CharField(
         label=_("Email"),
-        widget=forms.EmailInput(attrs={"autofocus": "true"}),
+        widget=forms.EmailInput(attrs={"autofocus": "true", "class": "form-control form-control-lg"}),
     )
     password = forms.CharField(
         label=_("Password"),
         strip=False,
-        widget=forms.PasswordInput(attrs={"autocomplete": "current-password"}),
+        widget=forms.PasswordInput(attrs={"autocomplete": "current-password", "class": "form-control form-control-lg"}),
     )
 
     error_messages = {
         "invalid_login": _(
-            "Please enter a correct %(email)s and password. Note that both "
-            "fields may be case-sensitive."
+            "Por favor insira %(email)s e senha corretamente. Perceba que ambos os "
+            "campos diferenciam maiúsculas e minúsculas."
         ),
-        "inactive": _("This account is inactive."),
+        "inactive": _("Sua conta está inativa."),
     }
 
     def __init__(self, request=None, *args, **kwargs):
@@ -124,8 +142,25 @@ class UserChangeForm(forms.ModelForm):
     the user, but replaces the password field with admin's
     disabled password hash display field.
     """
-    password = ReadOnlyPasswordHashField()
 
     class Meta:
         model = MyUser
-        fields = ('name', 'email', 'password', 'is_active')
+        fields = ('name', 'email')        
+        labels = {
+            'name': _('Nome'),
+            'email': _('Email'),
+            # 'is_active': _('Conta ativada'),
+        }
+
+        widgets = {
+            'name': forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                },
+            ),
+            'email': forms.EmailInput(
+                attrs={
+                    'class': 'form-control'
+                },
+            ),
+        }

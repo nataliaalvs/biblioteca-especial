@@ -12,33 +12,34 @@
 
 
 <div class="container">
-    <div class="text-center m-4 yellow-font">
-        <h2 class="fw-bolder font-sizing" aria-label="{{ book.title }}">{{ book.title }}</h2>
+    <div class="text-center m-4 font-sizing">
+        <h2 class="yellow-font font-sizing" aria-label="{{ book.title }}">{{ book.title }}</h2>
     </div>
 
     <div class="mx-2 mt-5 yellow-font">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h6 class="font-sizing">
+                    <label for="page" class="col-sm-10 col-form-label yellow-font font-sizing" aria-label="Página {{ book.current_page }}"  tabindex="0">Página {{ book.current_page }}</label>
+                </h6>
                 <div class="section-read font-sizing" tabindex="0">
                     {{ content_book | safe }}
                 </div>
-                <h6 class="font-sizing">
-                    <label for="page" class="col-sm-10 col-form-label yellow-font" aria-label="Página {{ book.current_page }}"  tabindex="0">Página {{ book.current_page }}</label>
-                </h6>
             </div>
         </div>
         <!-- <div class="container"> -->
-        <div class="text-center mt-auto">
+        <div class="text-center mt-auto font-sizing">
             {% if book.current_page > 0 %}                            
-            <button type="submit" class="btn fw-bold my-4 btn-text-color" aria-label="Voltar à página anterior" formaction="{% url 'book.show' book.id pg|add:'-1' %}">
-                <i class="bi bi-arrow-left i-prev font-sizing"></i>
-            </button>
+            <a class="btn fw-bold my-4 btn-text-color" aria-label="Voltar à página anterior" href="{% url 'book.show' book.id pg|add:'-1' %}">
+                <i class="bi bi-arrow-left i-prev font-sizing font-sizing"></i>
+            </a>
             {% endif %}
-            <button type="submit" class="btn fw-bold mx-sm-4 mx-md-4 mx-lg-5 btn-text-color" aria-label="Ícone para voltar ao início" formaction="{% url 'book.index' %}"><i class="bi bi-house i-home font-sizing"></i></button>
-            
-            <button type="submit" class="btn fw-bold my-4 btn-text-color" aria-label="Ir para a página seguinte" formaction="{% url 'book.show' book.id pg|add:'1' %}">
-                <i class="bi bi-arrow-right arrow-dark i-next font-sizing"></i>
-            </button>
+            <a class="btn fw-bold mx-sm-4 mx-md-4 mx-lg-5 btn-text-color font-sizing" aria-label="Ícone para voltar ao início" href="{% url 'book.index' %}"><i class="bi bi-house i-home font-sizing"></i></button>
+
+            <a class="btn fw-bold my-4 btn-text-color font-sizing" aria-label="Ir para a página seguinte" href="{% url 'book.show' book.id pg|add:'1' %}">
+                <i class="bi bi-arrow-right i-prev font-sizing"></i>
+            </a>
+
 
         </div>
         <!-- </div> -->

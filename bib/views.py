@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from customauth.forms import UserChangeForm
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
@@ -11,7 +12,7 @@ def index(request):
 
 @login_required(login_url='auth.login')
 def index_book(request):   
-    books = Book.objects.all()
+    books = Book.objects.filter(user=request.user)
     return render(request, 'books/index.html', { 'books': books })
 
 @login_required(login_url='auth.login')
@@ -28,7 +29,7 @@ def create_book(request):
 @login_required(login_url='auth.login')
 def show_book(request, id, pg):
     book = Book.objects.get(pk=id)
-    if str(book.user) == str(request.user.email):
+    if book.user.id == request.user.id:
         pdfFileObj = open(str(book.path), 'rb')
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj)    
         count = pdfReader.numPages
@@ -52,18 +53,25 @@ def update_book(request):
 @login_required(login_url='auth.login')
 def delete_book(request, id):
     book = Book.objects.get(pk=id)
-    os.remove(str(book.path)) 
-    book.delete()
+    if book.user.id == request.user.id:
+        os.remove(str(book.path)) 
+        book.delete()
     return redirect('book.index')
 
 @login_required(login_url='auth.login')
-def config(request):   
-    return render(request, 'user/config.html')
+def profile(request, pk):   
+    user = MyUser.objects.get(pk=pk)
+    if user.id == request.user.id:
+        form = UserChangeForm(request.POST or None, instance=user)
+        if form.is_valid():
+            form.instance.user = request.user
+            form.save()
+            return redirect('./' + str(request.user.id))
 
-@login_required(login_url='auth.login')
-def profile(request):   
-    return render(request, 'user/profile.html')
+        return render(request, 'user/profile.html', {"form":form})
 
+    return redirect('home')
+    
 @login_required(login_url='auth.login')
 def dyslexic(request):  
     user = MyUser.objects.get(pk=request.user.id)

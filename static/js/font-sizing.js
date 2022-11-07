@@ -50,27 +50,38 @@ document.body.onload = () => {
             el.style.wordWrap = 'break-word';
             if(el.nodeName === 'H1' || el.nodeName === 'H2' || el.nodeName === 'H3' || el.nodeName === 'H4' || el.nodeName === 'H5' || el.nodeName === 'H6') {
                 switch (el.nodeName) {
-                    case 'H2':
-                        el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
+                    case 'H1':
+                        el.style.setProperty( 'font-size', 'calc(40px + '+String(this.get() * 100) + '%)', 'important' );
                         // el.style.setProperty( 'line-height', 'calc(9.5px + '+String(this.get() * 70) + '%)', 'important' );
                         break;
 
                     case 'H2':
                         el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
-                        el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
+                        // el.style.setProperty( 'line-height', 'calc(9.5px + '+String(this.get() * 70) + '%)', 'important' );
+                        break;
+                        /*ANTES ESTAVAM TODOS OS CALC IGUAIS AO DO H2, COM 35PX, LINE HEIGTH DE 1.2REM E O SEGUNDO FONT-SIZE COM 60PX*/
+
+                    // case 'H2':
+                    case 'H3':
+                        el.style.setProperty( 'font-size', 'calc(30px + '+String(this.get() * 100) + '%)', 'important' );
+                        // el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
                         break;
 
-                    case 'H2':
-                            el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
-                            el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
+                    // case 'H2':
+                    case 'H4':
+                            el.style.setProperty( 'font-size', 'calc(25px + '+String(this.get() * 100) + '%)', 'important' );
+                            // el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
                             break;
 
-                    case 'H4':
-                        el.style.setProperty( 'font-size', 'calc(calc(1rem + 0.3vw) + '+String(this.get() * 100) + '%)', 'important' );
+                    // case 'H4':
+                    case 'H5':
+                        el.style.setProperty( 'font-size', 'calc(20px + '+String(this.get() * 100) + '%)', 'important' );
+                        // el.style.setProperty( 'font-size', 'calc(calc(1rem + 0.3vw) + '+String(this.get() * 100) + '%)', 'important' );
                         // el.style.setProperty( 'line-height', 'calc(1.2rem + '+String(this.get() * 40) + '%)', 'important' );
                         break;
 
-                    case 'H2':
+                    // case 'H2':
+                    case 'H6':
                         el.style.setProperty( 'font-size', 'calc(35px + '+String(this.get() * 100) + '%)', 'important' );
                         el.style.setProperty( 'font-size', 'calc(60px + '+String(this.get() * 100) + '%)', 'important' );
                         break;
@@ -81,7 +92,7 @@ document.body.onload = () => {
                 
                 
             } else {                
-                el.style.setProperty( 'font-size', 'calc(1rem + '+String(this.get() * 50) + '%)', 'important' );
+                el.style.setProperty( 'font-size', 'calc(25px + '+String(this.get() * 50) + '%)', 'important' );
                 el.style.setProperty( 'line-height', 'calc(1rem + '+String(this.get() * 40) + '%)', 'important' );
             }
         }        
