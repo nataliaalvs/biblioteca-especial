@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-^1j0rkpafp%^62k)@h*#y956%v2-s_++$-63&aq&)n-(t4*y89
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', '.now.sh']
-
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', '.now.sh', '192.168.0.190', 'bibliotecaespecial.com.br']
 
 # Para utilizar a autenticação customizada é interessante adicionar:
 AUTH_USER_MODEL = 'customauth.MyUser'
@@ -86,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_bibliotecaespecial',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'labredes2022',
         'HOST': 'localhost',
     }
 }
