@@ -5,57 +5,46 @@
 {% block section %}
 
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
-<section class="v-100 fw-bolder py-5 b-section">
-  <div class="container pt-4 vh-100">
-    <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-10 col-sm-10 col-md-8 col-lg-6 ">
-        <div class="card shadow-2-strong col-xs-4" style="border-radius: 1rem; border:none">
-          <div class="card-body p-4 text-center m-5">
-            <div class="mb-2">
-              <span><i style="font-size:48px" class="bi bi-book"></i> </span>
-              <h3 class="mb-2 login-title font-sizing">Cadastro</h3>
-              <p class="fw-normal font-sizing" style="color: gray">Insira seus dados para criar sua conta</p>
-            </div>
-
-            <form method="post">
-              {% csrf_token %}
-
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text font-sizing" for="id_name">Nome</label>
-                <input type="text" id="id_name" name="name" class="form-control" />
-              </div>
-
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text font-sizing" for="id_theme">Tema</label>
-                <input type="number" name="theme" id="id_theme" class="form-control form-control-lg" maxlength="255" required autofocus="true" />
-              </div>
-
-              <div class="form-outline mb-2 text-start">
-                <label class="form-label dark-text font-sizing" for="id_email">Email</label>
-                <input type="email" name="email" id="id_email" class="form-control form-control-lg" maxlength="255" required autofocus="true" />
-              </div>
-
-              <div class="form-outline mb-3 text-start">
-                <label class="form-label dark-text font-sizing" for="id_password">Senha</label>
-                <input type="password" name="password1" id="id_password1" class="form-control form-control-lg" required/>
-              </div>
-
-              <div class="form-outline mb-3 text-start">
-                <label class="form-label dark-text font-sizing" for="id_password">Confirme sua senha</label>
-                <input type="password" name="password2" id="id_password2" class="form-control form-control-lg" required />
-              </div>
-
-              
-              <button class="btn btn-terciary btn-dark-primary mt-3 font-sizing" type="submit">Cadastrar</button>
-              <div class="mt-2">
-                <p class="dark-p font-sizing">Já tem uma conta? <a class="font-sizing" href="{% url 'auth.login' %}">Entre na sua conta</a>
-                </p>
-              </div>
-          </form>
-
-
-          </div>
+<section class="fw-bolder b-section mt-5">
+  <div class="container" style="max-width: 675px;">    
+    <div class="card shadow-2-strong col-xs-4" style="border-radius: 1rem; border:none">
+      <div class="card-body p-4 text-center m-5">
+        <div class="mb-5">
+          <span><i style="font-size:48px" class="bi bi-book"></i> </span>
+          <h3 class="mb-2 login-title font-sizing">Cadastro</h3>
+          <p class="fw-normal font-sizing" style="color: gray">Insira seus dados para criar sua conta</p>
         </div>
+
+        <form method="post">
+          {% csrf_token %}
+
+          <div class="form-outline mb-3 text-start">
+            <label class="form-label dark-text font-sizing" for="id_name">Nome</label>
+            <input type="text" id="id_name" name="name" class="form-control" />
+          </div>
+
+          <div class="form-outline mb-3 text-start">
+            <label class="form-label dark-text font-sizing" for="id_email">Email</label>
+            <input type="email" name="email" id="id_email" class="form-control form-control-lg" maxlength="255" required autofocus="true" />
+          </div>
+
+          <div class="form-outline mb-3 text-start">
+            <label class="form-label dark-text font-sizing" for="id_password">Senha</label>
+            <input type="password" name="password1" id="id_password1" class="form-control form-control-lg" required/>
+          </div>
+
+          <div class="form-outline mb-3 text-start">
+            <label class="form-label dark-text font-sizing" for="id_password">Confirme sua senha</label>
+            <input type="password" name="password2" id="id_password2" class="form-control form-control-lg" required />
+          </div>
+
+          
+          <button class="btn btn-terciary btn-dark-primary mt-3 font-sizing" type="submit">Cadastrar</button>
+          <div class="mt-2">
+            <p class="dark-p font-sizing">Já tem uma conta? <a class="font-sizing" href="{% url 'auth.login' %}">Entre na sua conta</a>
+            </p>
+          </div>
+      </form>
       </div>
     </div>
   </div>

@@ -111,7 +111,7 @@
                         <a class="nav-link dropdown-toggle font-sizing" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ request.user.name }}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'user.profile' %}" aria-label="Opção para ver seu perfil">Meu perfil</a></li>
+                            <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'user.profile' request.user.id %}" aria-label="Opção para ver seu perfil">Meu perfil</a></li>
                             <li><hr class="dropdown-divider" /></li>
                             <li><a class="dropdown-item fw-bold font-sizing" href="{% url 'auth.logout' %}" aria-label="Opção para sair da sua conta">Sair</a></li>
                         </ul>
